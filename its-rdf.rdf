@@ -7,7 +7,6 @@
     xmlns:owl ="http://www.w3.org/2002/07/owl#"
     xmlns:dcterms="http://purl.org/dc/terms/"
     xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <!-- $Id: its-rdf-new.rdf,v 1.5 2015/10/08 08:50:37 fsasaki Exp $  -->
     <owl:Ontology rdf:about="http://www.w3.org/2005/11/its/rdf#">
         <dc:creator>Dave Lewis</dc:creator><dc:creator>Felix Sasaki</dc:creator><dc:creator>Sebastian Hellmann</dc:creator>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> This is the ITS 2.0 / RDF
@@ -36,9 +35,9 @@
             http://www.w3.org/2005/11/its/rdf-content/its-in-linked-data.json
             
             This ontology has been initially created by the W3C MultilingualWeb-LT Working Group and is now maintained by the W3C ITS Interest Group. The ontology contains only properties that express the same information as the related ITS 2.0 data categories. Each property definition has a link to the underlying data category section in the ITS 2.0 specification.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2005/11/its/rdf-content/its-rdf.rdf"/>
+        <rdfs:isDefinedBy rdf:resource="https://github.com/w3c/itsrdf/blob/master/its-rdf.rdf"/>
         <rdfs:label xml:lang="en">ITS 2.0 / RDF Ontology</rdfs:label>
-        <owl:versionInfo>Versioning done on resource level. See https://github.com/w3c/itsrdf/blob/master/@@@.ttl</owl:versionInfo>
+        <owl:versionInfo>Versioning done on resource level. See https://github.com/w3c/itsrdf/blob/master/its-rdf.rdf</owl:versionInfo>
     </owl:Ontology>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#translate"> 
         <rdfs:comment xml:lang="en">The Translate data category expresses information about whether the content of an element or attribute is intended for translation or not. The values of this data category are "yes" (translatable) or "no" (not translatable). Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#translatability-definition</rdfs:comment>
