@@ -31,8 +31,8 @@
         <ns3:preferredNamespaceUri xmlns:ns3="http://purl.org/vocab/vann/">http://www.w3.org/2005/11/its/rdf#</ns3:preferredNamespaceUri>
         <rdfs:comment xml:lang="en">The ITS 2.0 / RDF Ontology is an an RDF/OWL-based format that represents information to foster automated creation and processing of multilingual Web content. The ontology provides definitions that exactly align with the definitions provided in the ITS 2.0 specification. The difference is the usage scenario. The specification defines usages of ITS in markup, the ontology defines usage in linked data. A prominent usage example is application of the ontology in NIF (Natural Language Processing Interchange format). Linked data examples that show the usage of this ontology can be found the via FREME API http://api.freme-project.eu/doc/current/ . A prototypical example file in XML and its counterpart as linked data can be found here:
             
-            http://www.w3.org/2005/11/its/rdf-content/its-in-markup.xml
-            http://www.w3.org/2005/11/its/rdf-content/its-in-linked-data.json
+            https://github.com/w3c/itsrdf/blob/master/its-in-markup.xml
+            https://github.com/w3c/itsrdf/blob/master/its-in-linked-data.json
             
             This ontology has been initially created by the W3C MultilingualWeb-LT Working Group and is now maintained by the W3C ITS Interest Group. The ontology contains only properties that express the same information as the related ITS 2.0 data categories. Each property definition has a link to the underlying data category section in the ITS 2.0 specification.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://github.com/w3c/itsrdf/blob/master/its-rdf.rdf"/>
