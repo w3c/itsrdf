@@ -1,0 +1,217 @@
+﻿<itsProcessingInput>
+ <!-- Translate data category -->
+<topic id="myTopic">
+ <title>The ITS Topic</title>
+ <prolog>
+  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="2.0">
+   <its:translateRule selector="itsProcessingInput/topic[1]//*" translate="no"/>
+   <its:translateRule selector="itsProcessingInput/topic[1]//p" translate="yes"/>
+   <!-- With these rules only the text "For the implementation of ITS, apply the rules in the order:"
+   and " The last rule wins." should end up translatable --> 
+   </its:rules>
+ </prolog>
+ <body>
+  <dl>
+   <dlentry id="tDataCat">
+    <dt>Data category</dt>
+    <dd>ITS defines <term>data category</term> as an abstract concept for a particular 
+    type of information for internationalization and localization of XML schemas and documents.</dd>
+   </dlentry>
+  </dl>
+  <p>For the implementation of ITS, apply the rules in the order:</p>
+  <ul>
+   <li>Default</li>
+   <li>Rules in the schema</li>
+   <li>Rules in the document instance</li>
+   <li>Local attributes</li>
+  </ul>
+  <p><ph xml:lang="fr">Et voilà !</ph> The last rule wins.</p>
+ </body>
+</topic>
+ <!-- Directionality data category -->
+ <text xml:lang="en" xmlns:its="http://www.w3.org/2005/11/its" its:version="2.0">
+  <body>
+   <par>In Arabic, the title <quote xml:lang="ar"
+    its:dir="rtl">نشاط التدويل، W3C</quote>
+    means <quote>Internationalization Activity, W3C</quote>.</par>
+  </body>
+ </text>
+ <!-- Domain data category -->
+ <doc>
+  <head>
+   <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="2.0">
+    <its:domainRule selector="/itsProcessingInput/doc[1]/body"
+     domainPointer="/itsProcessingInput/doc[1]/head/meta[@name='DC.subject']/@content"
+     domainMapping="automotive auto, medical medicine, 'criminal law' law, 'property law' law"
+    />
+   </its:rules>
+   <meta name="DC.subject" content="automotive"/>
+  </head>
+  <body>
+   <p>The new car from XYZ - buy it now!</p>
+  </body>
+ </doc>
+ <!-- Elements within text data category -->
+ <text
+  xmlns:its="http://www.w3.org/2005/11/its"
+  its:version="2.0">
+  <body>
+   <par>Text with <bold its:withinText='yes'>bold</bold>.</par>
+  </body>
+ </text>
+ <!-- External resource data category -->
+ <doc xmlns:its="http://www.w3.org/2005/11/its" xmlns:db="docbook.org/ns/docbook">
+  <its:rules version="2.0">
+   <its:externalResourceRefRule selector="/itsProcessingInput/doc[2]//db:imagedata | //db:audiodata |  //db:videodata"
+    externalResourceRefPointer="@fileref"/>
+  </its:rules>
+  <mediaobject xmlns="docbook.org/ns/docbook">
+   <videoobject>
+    <videodata fileref="movie.avi"/>
+   </videoobject>
+   <imageobject>
+    <imagedata fileref="movie-frame.gif"/>
+   </imageobject>
+   <textobject>
+    <para>This video illustrates the proper way to assemble an inverting time distortion
+     device. </para>
+    <warning>
+     <para> It is imperative that the primary and secondary temporal couplings not be
+      mounted in the wrong order. Temporal catastrophe is the likely result. The
+      future you destroy may be your own. </para>
+    </warning>
+   </textobject>
+  </mediaobject>
+ </doc>
+ <!-- ID Value data category -->
+ <doc
+  xmlns:its="http://www.w3.org/2005/11/its" >
+  <its:rules version="2.0">
+   <its:idValueRule selector="/itsProcessingInput/doc[3]//text" idValue="concat(../@name, '_t')"/>
+   <its:idValueRule selector="/itsProcessingInput/doc[3]//desc" idValue="concat(../@name, '_d')"/>
+  </its:rules>
+  <msg name="settingsMissing">
+   <text>Can't find settings file.</text>
+   <desc>The module <em>cannot</em> find the default settings file.
+    You need to re-initialize the system.</desc>
+  </msg>
+ </doc>
+ <!-- Language information data category -->
+ <doc>
+  <head>
+   <its:rules version="2.0" xmlns:its="http://www.w3.org/2005/11/its">
+    <its:langRule  
+     selector="/itsProcessingInput/doc[4]//p" langPointer="@mylangattribute"/>
+   </its:rules>
+  </head>
+  <body>
+   <p mylangattribute="ja">これはテストです。</p>
+  </body>
+ </doc>
+ <!-- Locale filter data category -->
+ <book
+  xmlns:its="http://www.w3.org/2005/11/its" >
+  <info>
+   <legalnotice
+    its:localeFilterList="en-CA, fr-CA">
+    <para>This legal notice is only for Canadian locales.</para>
+   </legalnotice>
+  </info>
+ </book>
+ <!-- Localization note data category -->
+ <Res>
+  <prolog>
+   <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="2.0">
+    <its:translateRule selector="itsProcessingInput/Res[1]//msg/notes" translate="no"/>
+    <its:locNoteRule locNoteType="description" selector="itsProcessingInput/Res[1]//msg/data"
+     locNotePointer="../notes"/>
+   </its:rules>
+  </prolog>
+  <body>
+   <msg id="FileNotFound">
+    <notes>Indicates that the resource file {0} could not be loaded.</notes>
+    <data>Cannot find the file {0}.</data>
+   </msg>
+   <msg id="DivByZero">
+    <notes>A division by 0 was going to be computed.</notes>
+    <data>Invalid parameter.</data>
+   </msg>
+  </body>
+ </Res>
+ <!-- Target pointer -->
+ <file>
+  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="2.0">
+   <its:translateRule selector="/itsProcessingInput/file[1]" translate="no"/>
+   <its:translateRule selector="/itsProcessingInput/file[1]//source" translate="yes"/>
+   <its:targetPointerRule selector="/itsProcessingInput/file[1]//source" targetPointer="../target"/>
+  </its:rules>
+  <entry id="one">
+   <source>Remember last folder</source>
+   <target>To be created (one)</target>
+  </entry>
+  <entry id="two">
+   <source>Custom file filter:</source>
+   <target>To be created (two)</target>
+  </entry>
+ </file>
+ <!-- Terminology -->
+ <text>
+  <its:rules version="2.0" xmlns:its="http://www.w3.org/2005/11/its">
+   <its:termRule selector="/itsProcessingInput/text[3]//term" term="yes"
+    termInfoPointer="id(@def)"/>
+  </its:rules>
+  <p>We may define <term def="TDPV">discoursal point of view</term>
+   as <gloss xml:id="TDPV">the relationship, expressed through discourse
+    structure, between the implied author or some other addresser,
+    and the fiction.</gloss></p>
+ </text>
+ <!-- Text Analysis -->
+ <textTa xmlns:its="http://www.w3.org/2005/11/its" its:version="2.0" its:annotatorsRef="text-analysis|http://enrycher.ijs.si">
+  <body>
+   <p><span its:taClassRef="http://nerd.eurecom.fr/ontology#Location"  its:taIdentRef="http://dbpedia.org/resource/Dublin" its:taConfidence="0.7">Dublin</span> is the <span its:taSource="Wordnet3.0" its:taIdent="301467919" its:taConfidence="0.5">capital</span> of Ireland.</p>
+  </body>
+ </textTa>
+ <!-- Localization quality issue -->
+ <doc xmlns:its="http://www.w3.org/2005/11/its" its:version="2.0">
+  <file>
+   <header>
+    <its:rules version="2.0">
+     <its:locQualityIssueRule selector="//mrk[@type='x-itslq']"
+      locQualityIssuesRefPointer="@ref"/>
+    </its:rules>
+   </header>
+   <unit id="1">
+    <segment>
+     <source>This is the content</source>
+     <target><mrk type="x-itslq" ref="#lq1">c'es</mrk> le contenu</target>
+    </segment>
+    <its:locQualityIssues xml:id="lq1">
+     <its:locQualityIssue
+      locQualityIssueComment="'c'es' is unknown. Could be 'c'est'"
+      locQualityIssueSeverity="75"
+      locQualityIssueProfileRef="http://example.org/qaMovel/v1"
+      locQualityIssueEnabled="yes"/>
+    </its:locQualityIssues>
+   </unit>
+  </file>
+ </doc>
+ <textMTConfidence xmlns:its="http://www.w3.org/2005/11/its" its:version="2.0">
+   <body>
+    <p>
+     <span its:annotatorsRef="mt-confidence|file:///tools.xml#T1" its:mtConfidence="0.6982">Dublin is the capital city of Ireland and has the 50th biggest population density in Europe.</span>
+     <span its:annotatorsRef="mt-confidence|file:///tools.xml#T2" its:mtConfidence="0.7982">Madrid is the capital of Spain.</span>
+     <span its:annotatorsRef="mt-confidence|file:///tools.xml#T3" its:mtConfidence="0.9982">Berlin is the capital of Germany.</span>
+     <span its:annotatorsRef="mt-confidence|file:///tools.xml#T4" its:mtConfidence="0.6982">London is the capital of England</span>
+    </p>
+   </body>
+ </textMTConfidence>
+ <allowedCharactersMessages xmlns:its="http://www.w3.org/2005/11/its" its:version="2.0">
+  <msg num="123">Click the <panelmsg its:allowedCharacters="[&#x0020;-&#x00FE;]"
+   >CONTINUE</panelmsg> Button on the printer panel</msg>
+ </allowedCharactersMessages>
+ <storageSizeMessages xmlns:its="http://www.w3.org/2005/11/its" its:version="2.0">
+  <var num="panelA1_Continue" its:storageSize="8" its:storageEncoding="UTF-16" its:lineBreakType="lf">CONTINUE</var>
+  <var num="panelA1_Stop" its:storageSize="8" its:storageEncoding="UTF-16" its:lineBreakType="lf">STOP</var>
+  <var num="panelB5_Cancel" its:storageSize="12" its:storageEncoding="UTF-16" its:lineBreakType="lf">CANCEL</var>
+ </storageSizeMessages>
+</itsProcessingInput>
