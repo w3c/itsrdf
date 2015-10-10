@@ -12,36 +12,30 @@
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string" xml:lang="en"> This is the ITS 2.0 / RDF
             Ontology version 8 October 2015.
             
-            The ontology is used to express ITS 2.0 so-called "data categories" as linked data. For more information about ITS 2.0, see
-            http://www.w3.org/TR/its20/
+            The ontology is used to express ITS 2.0 so-called "data categories" as linked data. For more information about ITS 2.0, see http://www.w3.org/TR/its20/
             
-            ITS 2.0 has been produced by the W3C MultilingualWeb-LT working group,
-            see http://www.w3.org/International/multilingualweb/lt/
+            ITS 2.0 has been produced by the W3C MultilingualWeb-LT working group, see http://www.w3.org/International/multilingualweb/lt/
             
-            This ontology is being maintained by the W3C ITS Interest Group, see
-            http://www.w3.org/International/its/ig/
+            This ontology is being maintained by the W3C ITS Interest Group, see http://www.w3.org/International/its/ig/
             
-            Please note that this file may change
-            without notice. For updated information, please refer to the latest version of
-            Internationalization Tag Set (ITS) Version 2.0 specification at http://www.w3.org/TR/its20/ and
-            the ITS IG page at
-            http://www.w3.org/International/its/ig/</rdfs:comment>
+            Please note that this file may change without notice. For updated information, please refer to the latest version of Internationalization Tag Set (ITS) Version 2.0 specification at http://www.w3.org/TR/its20/ and the ITS IG page at http://www.w3.org/International/its/ig/
+        
+        The ITS 2.0 / RDF Ontology is an an RDF/OWL-based format that represents information to foster automated creation and processing of multilingual Web content. The ontology provides definitions of RDF properties that exactly align with the so-called "data categories" provided in the ITS 2.0 specification. The difference is the usage scenario. The ITS 2.0 specification defines usages of ITS in markup, the ontology defines usage in linked data.
+        
+        Like with ITS 2.0 itself, the main purpose of this ontology is to express information in source content in one or several language that then can be taken up in multilingual workflows. An example of such translation is the "Translate" data category and the "translate" RDF property. They trigger in translation workflows that a human translator or a machine translation system should not change a particular piece of content. Because of this role of ITS, its actually usage involves workflow formats. An XML format for multilingual workflows is XLIFF (XML Localization Interchange File Format). As of writing, native ITS support is prepared for the upcoming XLIFF version 2.1. A prominent usage scenario of the ITS ontology in the realm of linked data workflows involving natural language is NIF (Natural Language Processing Interchange format). Another potential usage scenario is the W3C Annotation model, see http://www.w3.org/TR/annotation-model/ , or in localization workflows as discussed in the BPMLOD community group http://www.w3.org/community/bpmlod/wiki/Use_cases_definition#Localization_Workflow
+        
+        Linked data examples that show the usage of this ontology can be found the via FREME API http://api.freme-project.eu/doc/current/ . A prototypical example file in XML and its counterpart as linked data can be found here:
+        
+        https://github.com/w3c/itsrdf/blob/master/its-in-markup.xml
+        https://github.com/w3c/itsrdf/blob/master/its-in-linked-data.json
+        
+        This ontology has been initially created by the W3C MultilingualWeb-LT Working Group and is now maintained by the W3C ITS Interest Group. The ontology contains only properties that express the same information as the related ITS 2.0 data categories. Each property definition has a link to the underlying data category section in the ITS 2.0 specification.</rdfs:comment>
         <dc:publisher>World Wide Web Consortium (W3C)</dc:publisher>
         <dc:rights xml:lang="en">This ontology is licensed under the W3C software license (http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231)</dc:rights>
         <dcterms:license rdf:resource="http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231"/>
         <dcterms:title xml:lang="en">ITS 2.0 / RDF Ontology</dcterms:title>  
         <ns2:preferredNamespacePrefix xmlns:ns2="http://purl.org/vocab/vann/">itsrdf</ns2:preferredNamespacePrefix>
         <ns3:preferredNamespaceUri xmlns:ns3="http://purl.org/vocab/vann/">http://www.w3.org/2005/11/its/rdf#</ns3:preferredNamespaceUri>
-        <rdfs:comment xml:lang="en">The ITS 2.0 / RDF Ontology is an an RDF/OWL-based format that represents information to foster automated creation and processing of multilingual Web content. The ontology provides definitions of RDF properties that exactly align with the so-called "data categories" provided in the ITS 2.0 specification. The difference is the usage scenario. The ITS 2.0 specification defines usages of ITS in markup, the ontology defines usage in linked data.
-            
-            Like with ITS 2.0 itself, the main purpose of this ontology is to express information in source content in one or several language that then can be taken up in multilingual workflows. An example of such translation is the "Translate" data category and the "translate" RDF property. They trigger in translation workflows that a human translator or a machine translation system should not change a particular piece of content. Because of this role of ITS, its actually usage involves workflow formats. An XML format for multilingual workflows is XLIFF (XML Localization Interchange File Format). As of writing, native ITS support is prepared for the upcoming XLIFF version 2.1. A prominent usage scenario of the ITS ontology in the realm of linked data workflows involving natural language is NIF (Natural Language Processing Interchange format). Another potential usage scenario is the W3C Annotation model, see http://www.w3.org/TR/annotation-model/ , or in localization workflows as discussed in the BPMLOD community group http://www.w3.org/community/bpmlod/wiki/Use_cases_definition#Localization_Workflow
-            
-            Linked data examples that show the usage of this ontology can be found the via FREME API http://api.freme-project.eu/doc/current/ . A prototypical example file in XML and its counterpart as linked data can be found here:
-            
-            https://github.com/w3c/itsrdf/blob/master/its-in-markup.xml
-            https://github.com/w3c/itsrdf/blob/master/its-in-linked-data.json
-            
-            This ontology has been initially created by the W3C MultilingualWeb-LT Working Group and is now maintained by the W3C ITS Interest Group. The ontology contains only properties that express the same information as the related ITS 2.0 data categories. Each property definition has a link to the underlying data category section in the ITS 2.0 specification.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://github.com/w3c/itsrdf/blob/master/its-rdf.rdf"/>
         <rdfs:label xml:lang="en">ITS 2.0 / RDF Ontology</rdfs:label>
         <owl:versionInfo>Versioning done on resource level. See https://github.com/w3c/itsrdf/blob/master/its-rdf.rdf</owl:versionInfo>
