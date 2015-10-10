@@ -40,7 +40,7 @@
         <owl:versionInfo>Versioning done on resource level. See https://github.com/w3c/itsrdf/blob/master/its-rdf.rdf</owl:versionInfo>
     </owl:Ontology>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#translate"> 
-        <rdfs:comment xml:lang="en">The Translate property is based on the ITS "Translate" data category. The property expresses information about whether the text associated with a resource should be translated or not. Possible values are "yes" (translatable) or "no" (not translatable). Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#translatability-definition</rdfs:comment>
+        <rdfs:comment xml:lang="en">The translate property is based on the ITS "Translate" data category. The property expresses information about whether the text associated with a resource should be translated or not. Possible values are "yes" (translatable) or "no" (not translatable). Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#translatability-definition</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#locNoteType">
