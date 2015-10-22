@@ -102,9 +102,9 @@
 		<rdfs:comment xml:lang="en">
 		The termAnnotatorsRef property is based on the ITS "Terminology" data category. 
 		It has to be set, if the termConfidence property is used, see http://www.w3.org/TR/its20/#its-tool-annotation.
-		The value of annotatorsRef is a space-separated list of references where each reference is composed of two parts: a data category identifier and an IRI. These two parts are separated by a | VERTICAL LINE (U+007C) character:
+		The value of termAnnotatorsRef is a space-separated list of references where each reference is composed of two parts: a data category identifier and an IRI. These two parts are separated by a | VERTICAL LINE (U+007C) character:
 		 * The data category identifier MUST be one of the identifiers specified in the data category overview table.
-		 * Within one annotatorsRef value, a data category identifier MUST NOT appear more than one time.
+		 * Within one termAnnotatorsRef value, a data category identifier MUST NOT appear more than one time.
 		 * The IRI indicates information about the processor used to generate the data category annotation. No single means is specified for how this IRI has to be used to indicate processor information. Possible mechanisms are: to encode information directly in the IRI, e.g., as parameters; to reference an external resource that provides such information, e.g. an XML file or an RDF declaration; or to reference another part of the document that provides such information.
 		
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#terminology
@@ -129,12 +129,43 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#domains">
+		<rdfs:comment xml:lang="en">
+		The domains property is based on the ITS "Domain" data category. 
+		This property is used to identify the topic or subject of content. Such information allows for more relevant linguistic choices during various processes.
+
+		Examples of usage include:
+			* Allowing machine translation systems to select the most appropriate engine and rules to translate the content.
+			* Providing a general indication of what terminology collection is most suitable for use by translators.
+
+		This data category addresses various challenges:
+			* Often domain-related information already exists in the document (e.g., keywords in the HTML meta element). The Domain data category provides a mechanism to point to this information.
+			* There are many flat or structured lists of domain related values, keywords, key phrases, classification codes, ontologies, etc. The Domain data category does not propose its own given list. Instead it provides a mapping mechanism to associate the values in the document with the values used by the consumer tool.
+			
+		TODO: ADD ADITIONAL INFORMATION?
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#domain
+		</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#taConfidence">
+		<rdfs:comment xml:lang="en">
+		The taConfidence property is based on the ITS "Text Analysis" data category. 
+		This optional property implements the text analysis confidence, the confidence of the agent (that produced the annotation)in its own computation, see http://www.w3.org/TR/its20/#textAnalysis-info-pieces.
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#textanalysis
+		</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
     </owl:DatatypeProperty>
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#taAnnotatorsRef"/>
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#taAnnotatorsRef">
+		<rdfs:comment xml:lang="en">
+		The taAnnotatorsRef property is based on the ITS "Text Analysis" data category. 
+		It has to be set, if the taConfidence property is used, see http://www.w3.org/TR/its20/#its-tool-annotation.
+		The value of taAnnotatorsRef is a space-separated list of references where each reference is composed of two parts: a data category identifier and an IRI. These two parts are separated by a | VERTICAL LINE (U+007C) character:
+		 * The data category identifier MUST be one of the identifiers specified in the data category overview table.
+		 * Within one taAnnotatorsRef value, a data category identifier MUST NOT appear more than one time.
+		 * The IRI indicates information about the processor used to generate the data category annotation. No single means is specified for how this IRI has to be used to indicate processor information. Possible mechanisms are: to encode information directly in the IRI, e.g., as parameters; to reference an external resource that provides such information, e.g. an XML file or an RDF declaration; or to reference another part of the document that provides such information.
+		
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#textanalysis
+		</rdfs:comment>
+	</owl:ObjectProperty>
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2005/11/its/rdf#taPropRef"/>
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2005/11/its/rdf#taClassRef"/>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#taIdentRef"/>
