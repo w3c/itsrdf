@@ -57,20 +57,19 @@
     </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#locNote">
 		<rdfs:comment xml:lang="en">The locNote property is based on the ITS "Localization Note" data category. The property is used to communicate notes to localizers about a particular item of content.
-This data category can be used for several purposes, including, but not limited to:
-\<ul\>
-\<li\>Tell the translator how to translate parts of the content\</li\>
- * Expand on the meaning or contextual usage of a specific element, such as what a variable refers to or how a string will be used in the user interface
- * Clarify ambiguity and show relationships between items sufficiently to allow correct translation (e.g., in many languages it is impossible to translate the word"enabled" in isolation without knowing the gender, number, and case of the thing it refers to.)
- * Indicate why a piece of text is emphasized (important, sarcastic, etc.)
-\</ul\>
-	
-Two types of informative notes are needed:
- * An alert contains information that the translator has to read before translating a piece of text. Example: an instruction to the translator to leave parts of the text in the source language.
- * A description provides useful background information that the translator will refer to only if they wish. Example: a clarification of ambiguity in the source text.
-Editing tools may offer an easy way to create this type of information. Translation tools can be made to recognize the difference between these two types of localization notes, and present the information to translators in different ways.
+		This data category can be used for several purposes, including, but not limited to:
 
-Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#locNote-datacat</rdfs:comment>
+		Tell the translator how to translate parts of the content
+		 * Expand on the meaning or contextual usage of a specific element, such as what a variable refers to or how a string will be used in the user interface
+		 * Clarify ambiguity and show relationships between items sufficiently to allow correct translation (e.g., in many languages it is impossible to translate the word"enabled" in isolation without knowing the gender, number, and case of the thing it refers to.)
+		 * Indicate why a piece of text is emphasized (important, sarcastic, etc.)
+			
+		Two types of informative notes are needed:
+		 * An alert contains information that the translator has to read before translating a piece of text. Example: an instruction to the translator to leave parts of the text in the source language.
+		 * A description provides useful background information that the translator will refer to only if they wish. Example: a clarification of ambiguity in the source text.
+		Editing tools may offer an easy way to create this type of information. Translation tools can be made to recognize the difference between these two types of localization notes, and present the information to translators in different ways.
+
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#locNote-datacat</rdfs:comment>
 	</owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#locNoteRef">
 		<rdfs:comment xml:lang="en">
@@ -86,11 +85,31 @@ Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#locNote
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     </owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#termInfoRef">
+		<rdfs:comment xml:lang="en">
+		The optional termInfoRef property is based on the ITS "Terminology" data category. The value of this property contains an IRI referring to the resource providing information about the term.
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#terminology
+		</rdfs:comment>
 	</owl:ObjectProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#termConfidence">
+		<rdfs:comment xml:lang="en">
+		The optional termInfoRef property is based on the ITS "Terminology" data category. The value of this property is a rational number in the interval 0 to 1 (inclusive). The value follows the XML Schema double data type with the constraining facets minInclusive set to 0 and maxInclusive set to 1. termConfidence represents the confidence of the agents producing the annotation that the annotated unit is a term or not. 1 represents the highest level of confidence. termConfidence does not provide confidence information related to termInfoRef.
+		If this property is set, the termAnnotatorsRef has to be set (TODO: for any parent element?), too. See http://www.w3.org/TR/its20/#its-tool-annotation.
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#terminology
+		</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
     </owl:DatatypeProperty>
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#termAnnotatorsRef"/>
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#termAnnotatorsRef">
+		<rdfs:comment xml:lang="en">
+		The termAnnotatorsRef property is based on the ITS "Terminology" data category. 
+		It has to be set, if the termConfidence property is used, see http://www.w3.org/TR/its20/#its-tool-annotation.
+		The value of annotatorsRef is a space-separated list of references where each reference is composed of two parts: a data category identifier and an IRI. These two parts are separated by a | VERTICAL LINE (U+007C) character:
+		 * The data category identifier MUST be one of the identifiers specified in the data category overview table.
+		 * Within one annotatorsRef value, a data category identifier MUST NOT appear more than one time.
+		 * The IRI indicates information about the processor used to generate the data category annotation. No single means is specified for how this IRI has to be used to indicate processor information. Possible mechanisms are: to encode information directly in the IRI, e.g., as parameters; to reference an external resource that provides such information, e.g. an XML file or an RDF declaration; or to reference another part of the document that provides such information.
+		
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#terminology
+		</rdfs:comment>
+	</owl:ObjectProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#dir">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     </owl:DatatypeProperty>
