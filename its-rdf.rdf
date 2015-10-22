@@ -57,20 +57,14 @@
     </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#locNote">
 		<rdfs:comment xml:lang="en">The Localization Note data category is used to communicate notes to localizers about a particular item of content.
-
 This data category can be used for several purposes, including, but not limited to:
-
     Tell the translator how to translate parts of the content
     Expand on the meaning or contextual usage of a specific element, such as what a variable refers to or how a string will be used in the user interface
     Clarify ambiguity and show relationships between items sufficiently to allow correct translation (e.g., in many languages it is impossible to translate the word"enabled" in isolation without knowing the gender, number, and case of the thing it refers to.)
     Indicate why a piece of text is emphasized (important, sarcastic, etc.)
-
-
 Two types of informative notes are needed:
-
     An alert contains information that the translator has to read before translating a piece of text. Example: an instruction to the translator to leave parts of the text in the source language.
     A description provides useful background information that the translator will refer to only if they wish. Example: a clarification of ambiguity in the source text.
-
 Editing tools may offer an easy way to create this type of information. Translation tools can be made to recognize the difference between these two types of localization notes, and present the information to translators in different ways.</rdfs:comment>
 	</owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#locNoteRef"/>
