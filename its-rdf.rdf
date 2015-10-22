@@ -149,7 +149,7 @@
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#taConfidence">
 		<rdfs:comment xml:lang="en">
 		The taConfidence property is based on the ITS "Text Analysis" data category. 
-		This optional property implements the text analysis confidence, the confidence of the agent (that produced the annotation)in its own computation, see http://www.w3.org/TR/its20/#textAnalysis-info-pieces for further information.
+		This optional property implements the text analysis confidence, i.e. the confidence of the agent (that produced the annotation)in its own computation, see http://www.w3.org/TR/its20/#textAnalysis-info-pieces for further information.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#textanalysis
 		</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
@@ -170,7 +170,7 @@
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2005/11/its/rdf#taClassRef">
 		<rdfs:comment xml:lang="en">
 		The taClassRef property is based on the ITS "Text Analysis" data category. 
-		This property specifies an IRI, which implements the Entity type / concept class information, The type of entity, or concept class of the text analysis target, see http://www.w3.org/TR/its20/#textAnalysis-info-pieces for further information. 
+		This property specifies an IRI, which implements the Entity type / concept class information, i.e. the type of entity, or concept class of the text analysis target, see http://www.w3.org/TR/its20/#textAnalysis-info-pieces for further information. 
 		
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#textanalysis
 		</rdfs:comment>
