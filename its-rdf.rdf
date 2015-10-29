@@ -582,7 +582,7 @@
 		This construct is a sub-set of the Character Classes construct of XML Schema [XML Schema Part 2] and is compatible with most other regular expression engines.
 
 			Note:
-			Users may want to use a regular expression to make sure that they follow the definition given above. Sample regular expressions to verify the regular expression in allowed characters are provided: for XML and for Java.
+			Users may want to use a regular expression to make sure that they follow the definition given above. Sample regular expressions to verify the regular expression in allowed characters are provided: for XML (see http://www.w3.org/TR/its20/examples/allowed-characters-verify-xml-regex.txt) and for Java (see http://www.w3.org/TR/its20/examples/allowed-characters-verify-java-regex.txt).
 
 		Example of expressions (shown as XML source):
 			* &quot;[abc]&quot;: allows the characters 'a', 'b' and 'c'.
@@ -599,12 +599,43 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#storageSize">
+		<rdfs:comment xml:lang="en">
+		The storageSize property is based on the ITS "Storage Size" data category.
+		This property is used to specify the maximum storage size of a given content.
+		It defines the maximum number of bytes the text of the selected node is allowed in storage.
+		
+		It can be used for various purposes, including the following examples:
+			* Verify during translation if a string fits into a fixed-size database field.
+			* Control the size of a string that is stored in a fixed-size memory buffer at run-time.
+
+		The storage size is always expressed in bytes and excludes any leading Byte-Order-Markers. It is provided along with the character encoding and the line break type that will be used when the content is stored. If the encoding form does not use the byte as its unit (e.g. UTF-16 uses 16-bit code units) the storage size MUST still be given in byte (e.g., for UTF-16: 2 bytes per 16-bit code unit).
+
+		An application verifying the storage size for a given content is expected to perform the following steps:
+			* All the LINE FEED (U+000A) characters of the content to verify are replaced by the character or characters specified by the line break type.
+			* The resulting string is converted to an array of bytes using a character encoder for the specified encoding. If a character cannot be represented with the specified encoding, an error is generated.
+			* If the leading bytes represent a Byte-Order-Mark, they are stripped from that array.
+			* The length of the resulting array is compared to the storage size provided. The content is too long if the length is greater than the storage size.
+
+			Note:
+			Storage size is not directly related to the display length of a text, and therefore is not intended as a display length constraint mechanism.
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#storagesize
+		</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" />
     </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#storageEncoding">
+		<rdfs:comment xml:lang="en">
+		The storageEncoding property is based on the ITS "Storage Size" data category.
+		The value of this property holds the name of the character encoding used to calculate the number of bytes of the selected text. The name MUST be one of the names or aliases listed in the IANA Character Sets registry [IANA Character Sets]. The default value is "UTF-8".
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#storagesize
+		</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#lineBreakType">
+		<rdfs:comment xml:lang="en">
+		The lineBreakType property is based on the ITS "Storage Size" data category.
+		The value of this property indicates what type of line breaks the storage uses. The possible values are: "cr" for CARRIAGE RETURN (U+000D), "lf" for LINE FEED (U+000A), or "crlf" for CARRIAGE RETURN (U+000D) followed by LINE FEED (U+000A). The default value is "lf".
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#storagesize
+		</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     </owl:DatatypeProperty>
     <!-- Below are some example instances making use of the ontology.
