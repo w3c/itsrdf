@@ -236,50 +236,146 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     </owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#hasProvRecord">
+		<rdfs:comment xml:lang="en">
+		The hasProvRecord property is based on the ITS "Provenance" data category.
+		
+		The property is used to communicate the identity of agents that have been involved in the translation of the content or the revision of the translated content. This allows translation and translation revision consumers, such as post-editors, translation quality reviewers, or localization workflow managers, to assess how the performance of these agents may impact the quality of the translation. Translation and translation revision agents can be identified as a person, a piece of software or an organization that has been involved in providing a translation that resulted in the selected content. 
+		
+		The provRecord offers three types of information. First, it allows identification of translation agents. Second, it allows identification of revision agents. Third, if provenance information is needed that includes temporal or sequence information about translation processes (e.g. multiple revision cycles) or requires agents that support a wider range of activities, the data category offers a mechanism to refer to external provenance information.
+
+			Note:
+
+			The specification does not define the format of external provenance information, but it is recommended that an open provenance or change-logging format be used, e.g. the W3C provenance data model [PROV-DM].
+
+		Translation or translation revision tools, such as machine translation engines or computer assisted translation tools, may offer an easy way to create this information. Translation tools can then present this information to post-editors or translation workflow managers. Web applications may to present such information to consumers of translated documents.
+		
+			Note:
+
+			The tool related provenance and tool related revision provenance pieces of information are not meant to express information about tools used for creating ITS annotations themselves. For this purpose, ITS 2.0 provides a separate mechanism. See http://www.w3.org/TR/its20/#its-tool-annotation for details, especially http://www.w3.org/TR/its20/#annotators-ref-usage-scenarios.
+			
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
+		</rdfs:comment>
         <rdfs:range>
             <owl:Class rdf:about="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
         </rdfs:range>
     </owl:ObjectProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#person">
+		<rdfs:comment xml:lang="en">
+		The person property is based on the ITS "Provenance" data category. 
+		This property holds the human provenance information, the identification of a human translation agent.
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
+		</rdfs:comment>
+		TODO: add range string?
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
     </owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#personRef">
+		<rdfs:comment xml:lang="en">
+		The personRef property is based on the ITS "Provenance" data category. 
+		This property holds the human provenance information, the identification of a human translation agent.
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
+		</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
     </owl:ObjectProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#org">
+		<rdfs:comment xml:lang="en">
+		The org property is based on the ITS "Provenance" data category. 
+		This property holds the organizational provenance information, the identification of an organization acting as a translation agent.		
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
+		</rdfs:comment>
+		TODO: add range string?
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
     </owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#orgRef">
+		<rdfs:comment xml:lang="en">
+		The orgRef property is based on the ITS "Provenance" data category. 
+		This property holds the organizational provenance information, the identification of an organization acting as a translation agent.		
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
+		</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
     </owl:ObjectProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#tool">
+		<rdfs:comment xml:lang="en">
+		The tool property is based on the ITS "Provenance" data category. 
+		This property holds the tool-related provenance information, the identification of a software tool that was used in translating the selected content.	
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
+		</rdfs:comment>
+		TODO: add range string?
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
     </owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#toolRef">
+		<rdfs:comment xml:lang="en">
+		The toolRef property is based on the ITS "Provenance" data category. 
+		This property holds the tool-related provenance information, the identification of a software tool that was used in translating the selected content.	
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
+		</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
     </owl:ObjectProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#revPerson">
+		<rdfs:comment xml:lang="en">
+		The revPerson property is based on the ITS "Provenance" data category. 
+		This property holds the human revision provenance information, the identification of a human translation revision agent.	
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
+		</rdfs:comment>
+		TODO: add range string?
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
     </owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#revPersonRef">
+		<rdfs:comment xml:lang="en">
+		The revPersonRef property is based on the ITS "Provenance" data category. 
+		This property holds the human revision provenance information, the identification of a human translation revision agent.
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
+		</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
     </owl:ObjectProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#revOrg">
+		<rdfs:comment xml:lang="en">
+		The revOrg property is based on the ITS "Provenance" data category. 
+		This property holds the organizational revision provenance information, the identification of an organization acting as a translation revision agent.
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
+		</rdfs:comment>
+		TODO: add range string?
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
     </owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#revOrgRef">
+		<rdfs:comment xml:lang="en">
+		The revOrgRef property is based on the ITS "Provenance" data category. 
+		This property holds the organizational revision provenance information, the identification of an organization acting as a translation revision agent.
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
+		</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
     </owl:ObjectProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#revTool">
+		<rdfs:comment xml:lang="en">
+		The revTool property is based on the ITS "Provenance" data category. 
+		This property holds the tool-related revision provenance information, the identification of a software tool that was used in revising the translation of the selected content.
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
+		</rdfs:comment>
+		TODO: add range string?
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
     </owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#revToolRef">
+		<rdfs:comment xml:lang="en">
+		The revToolRef property is based on the ITS "Provenance" data category. 
+		This property holds the tool-related revision provenance information, the identification of a software tool that was used in revising the translation of the selected content.
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
+		</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
     </owl:ObjectProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#provRef">
+		<rdfs:comment xml:lang="en">
+		The provRef property is based on the ITS "Provenance" data category. 
+		This property holds the reference to external provenance descriptions, a reference to external provenance information.
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
+		</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
     </owl:ObjectProperty>
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#externalResourceRef"/>
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#externalResourceRef">
+		<rdfs:comment xml:lang="en">
+		The externalResourceRef property is based on the ITS "External Resource" data category. 
+		This property category indicates that a node represents or references potentially translatable data in a resource outside (TODO: replace the following) the document. Examples of such resources are external images and audio or video files.
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#externalresource
+		</rdfs:comment>
+	</owl:ObjectProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#target" /> 
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#id">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
