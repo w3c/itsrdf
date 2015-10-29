@@ -137,7 +137,7 @@
 			* Often domain-related information already exists in the document (e.g., keywords in the HTML meta element). The Domain data category provides a mechanism to point to this information.
 			* There are many flat or structured lists of domain related values, keywords, key phrases, classification codes, ontologies, etc. The Domain data category does not propose its own given list. Instead it provides a mapping mechanism to associate the values in the document with the values used by the consumer tool.
 			
-		TODO: ADD ADITIONAL INFORMATION?
+		TODO: ADD ADITIONAL INFORMATION (from http://www.w3.org/TR/its20/#domain-implementation)?
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#domain
 		</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
@@ -210,7 +210,6 @@
 		
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#LocaleFilter
 		</rdfs:comment>
-		TODO: why not a list?
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" /> 
     </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#localeFilterType">
