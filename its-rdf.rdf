@@ -134,12 +134,12 @@
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#withinText">
 		<rdfs:comment xml:lang="en">
 		The withinText property is based on the ITS "Elements Within Text" data category. 
-		This property reveals if and how an element affects the way text content behaves from a linguistic viewpoint. This information is for example relevant to provide basic text segmentation hints for tools such as translation memory systems. The values associated with this property are:
-		 • &quot;yes&quot;: The element and its content are part of the flow of its parent element. For example the element strong in [XHTML 1.0]:
+		This property reveals if and how an resource affects the way text content behaves from a linguistic viewpoint. This information is for example relevant to provide basic text segmentation hints for tools such as translation memory systems. The values associated with this property are:
+		 • "yes": The resource is part of the flow of its parent resource. For example like the element strong in [XHTML 1.0]:
 		   &lt;strong&gt;Appaloosa horses&lt;/strong&gt; have spotted coats.
-		 • &quot;nested&quot;: The element is part of the flow of its parent element, its content is an independent flow. For example the element fn in [DITA 1.0]:
+		 • "nested": The resource is part of the flow of its parent resource, its content is an independent flow. For example like the element fn in [DITA 1.0]:
 			Palouse horses&lt;fn&gt;A Palouse horse is the same as an Appaloosa.&lt;/fn&gt; have spotted coats.
-		 • &quot;no&quot;: The element splits the text flow of its parent element and its content is an independent text flow. For example the element p when inside the element li in DITA or XHTML:
+		 • "no": The resource splits the text flow of its parent resource and its content is an independent text flow. For example like the element p when inside the element li in DITA or XHTML:
 			&lt;li&gt;Palouse horses: &lt;p&gt;They have spotted coats.&lt;/p&gt; &lt;p&gt;They have been bred by the Nez Perce.&lt;/p&gt; &lt;/li&gt; 
 		
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#elements-within-text
@@ -149,7 +149,7 @@
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#domains">
 		<rdfs:comment xml:lang="en">
 		The domains property is based on the ITS "Domain" data category. 
-		This property is used to identify the topic or subject of content. Such information allows for more relevant linguistic choices during various processes.
+		This property is used to identify the topic or subject of the resource. Such information allows for more relevant linguistic choices during various processes.
 
 		Examples of usage include:
 			 • Allowing machine translation systems to select the most appropriate engine and rules to translate the content.
@@ -180,28 +180,27 @@
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#textanalysis
 		</rdfs:comment>
 	</owl:ObjectProperty>
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2005/11/its/rdf#taPropRef"/>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2005/11/its/rdf#taPropRef">
+		TODO: What's this?
+	</owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2005/11/its/rdf#taClassRef">
 		<rdfs:comment xml:lang="en">
 		The taClassRef property is based on the ITS "Text Analysis" data category. 
-		The value of this property holds the Entity type / concept class information, i.e. the type of entity, or concept class of the text analysis target, see http://www.w3.org/TR/its20/#textAnalysis-info-pieces for further information. 
-		
+		The value of this property holds the Entity type / concept class information, i.e. the type of entity, or concept class of the text analysis target. 		
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#textanalysis
 		</rdfs:comment>
 	</owl:AnnotationProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#taIdentRef">
 		<rdfs:comment xml:lang="en">
 		The taIdentRef property is based on the ITS "Text Analysis" data category. 
-		This property holds the identifier of the text analysis target, see http://www.w3.org/TR/its20/#textAnalysis-info-pieces for further information.
-		
+		This property refers to the text analysis target, see http://www.w3.org/TR/its20/#textAnalysis-info-pieces for further information.		
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#textanalysis
 		</rdfs:comment>
 	</owl:ObjectProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#taIdent">
 		<rdfs:comment xml:lang="en">
 		The taIdent property is based on the ITS "Text Analysis" data category. 
-		This property holds the identifier of the concept in the collection, see http://www.w3.org/TR/its20/#textAnalysis-info-pieces for further information.
-		
+		This property holds the identifier of the concept in the collection and is used in combination with taSource property, see http://www.w3.org/TR/its20/#textAnalysis-info-pieces for further information.		
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#textanalysis
 		</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
@@ -209,8 +208,7 @@
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#taSource">
 		<rdfs:comment xml:lang="en">
 		The taIdent property is based on the ITS "Text Analysis" data category. 
-		This property holds the identifier of the collection source, see http://www.w3.org/TR/its20/#textAnalysis-info-pieces for further information.
-		
+		This property holds the identifier of the collection source and is used in combination with the taIdent property, see http://www.w3.org/TR/its20/#textAnalysis-info-pieces for further information.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#textanalysis
 		</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
@@ -218,52 +216,46 @@
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#localeFilterList">
 		<rdfs:comment xml:lang="en">
 		The localeFilterList property is based on the ITS "Local Filter" data category.
-		It specifies that a node is only applicable to certain locales and interacts with the localeFilterType property.
+		It specifies that a resource is only applicable to certain locales and interacts with the localeFilterType property.
 
 		This property can be used for several purposes, including, but not limited to:
 			• Including a legal notice only in locales for certain regions.
 			• Dropping editorial notes from all localized output.
 
-		The Locale Filter data category associates with each selected node a filter type and a list of extended language ranges conforming to [BCP47].
-
 		The list is comma-separated and can include the wildcard extended language range "*". The list can also be empty. Whitespace surrounding language ranges is ignored.
 		
-		The value of this property is a comma-separated list of extended language ranges, or an empty string value.
-		
+		This property interacts with the localeFilterType property in the following way: 
+			 • A single wildcard "*" with a localeFilterType "include" indicates that the resource applies to all locales.
+			 • A single wildcard "*" with a localeFilterType "exclude" indicates that the resource applies to no locale.
+			 • An empty string with a localeFilterType "include" indicates that the resource applies to no locale.
+			 • An empty string with a localeFilterType "exclude" indicates that the resource applies to all locales.
+			 • Otherwise, with a localeFilterType "include", the resource applies to the locales for which the language tag has a match in the list when using the Extended Filtering algorithm defined in [BCP47](http://www.w3.org/TR/its20/#bcp47).
+			 • If, instead, the localeFilterType is "exclude", the resource applies to the locales for which the language tag does not have a match in the list when using the Extended Filtering algorithm defined in [BCP47](http://www.w3.org/TR/its20/#bcp47).
+				
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#LocaleFilter
 		</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" /> 
     </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#localeFilterType">
 		<rdfs:comment xml:lang="en">
-		The optional localeFilterType property is based on the ITS "Local Filter" data category. Possible values are "include" or "exclude". This property interacts with the localeFilterList property in the following way: 
-			 • A single wildcard "*" with a localeFilterType "include" indicates that the selected content applies to all locales.
-			 • A single wildcard "*" with a localeFilterType "exclude" indicates that the selected content applies to no locale.
-			 • An empty string with a localeFilterType "include" indicates that the selected content applies to no locale.
-			 • An empty string with a localeFilterType "exclude" indicates that the selected content applies to all locales.
-			 • Otherwise, with a localeFilterType "include", the selected content applies to the locales for which the language tag has a match in the list when using the Extended Filtering algorithm defined in [BCP47].
-			 • If, instead, the localeFilterType is "exclude", the selected content applies to the locales for which the language tag does not have a match in the list when using the Extended Filtering algorithm defined in [BCP47].
-		
+		The optional localeFilterType property is based on the ITS "Local Filter" data category. Possible values are "include" or "exclude". It interacts with the localeFilterList property.		
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#LocaleFilter
 		</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     </owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#hasProvRecord">
 		<rdfs:comment xml:lang="en">
-		The hasProvRecord property is based on the ITS "Provenance" data category.
+		The hasProvRecord property is based on the ITS "Provenance" data category.		
+		The property is used to communicate the identity of agents that have been involved in the translation of the content or the revision of the translated resource. This allows translation and translation revision consumers, such as post-editors, translation quality reviewers, or localization workflow managers, to assess how the performance of these agents may impact the quality of the translation. Translation and translation revision agents can be identified as a person, a piece of software or an organization that has been involved in providing a translation that resulted in the resource. 
 		
-		The property is used to communicate the identity of agents that have been involved in the translation of the content or the revision of the translated content. This allows translation and translation revision consumers, such as post-editors, translation quality reviewers, or localization workflow managers, to assess how the performance of these agents may impact the quality of the translation. Translation and translation revision agents can be identified as a person, a piece of software or an organization that has been involved in providing a translation that resulted in the selected content. 
-		
-		The provRecord offers three types of information. First, it allows identification of translation agents. Second, it allows identification of revision agents. Third, if provenance information is needed that includes temporal or sequence information about translation processes (e.g. multiple revision cycles) or requires agents that support a wider range of activities, the data category offers a mechanism to refer to external provenance information.
+		The provRecord offers three types of information. First, it allows identification of translation agents. Second, it allows identification of revision agents. Third, if provenance information is needed that includes temporal or sequence information about translation processes (e.g. multiple revision cycles) or requires agents that support a wider range of activities, this property offers a mechanism to refer to external provenance information.
 
 			Note:
-
 			The specification does not define the format of external provenance information, but it is recommended that an open provenance or change-logging format be used, e.g. the W3C provenance data model [PROV-DM].
 
 		Translation or translation revision tools, such as machine translation engines or computer assisted translation tools, may offer an easy way to create this information. Translation tools can then present this information to post-editors or translation workflow managers. Web applications may to present such information to consumers of translated documents.
 		
 			Note:
-
 			The tool related provenance and tool related revision provenance pieces of information are not meant to express information about tools used for creating ITS annotations themselves. For this purpose, ITS 2.0 provides a separate mechanism. See http://www.w3.org/TR/its20/#its-tool-annotation for details, especially http://www.w3.org/TR/its20/#annotators-ref-usage-scenarios.
 			
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
@@ -278,7 +270,7 @@
 		This property holds the human provenance information, the identification of a human translation agent.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
 		</rdfs:comment>
-		TODO: add range string?
+		TODO: why not range: string?
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
     </owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#personRef">
@@ -295,7 +287,7 @@
 		This property holds the organizational provenance information, the identification of an organization acting as a translation agent.		
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
 		</rdfs:comment>
-		TODO: add range string?
+		TODO: why not range: string?
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
     </owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#orgRef">
@@ -309,16 +301,16 @@
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#tool">
 		<rdfs:comment xml:lang="en">
 		The tool property is based on the ITS "Provenance" data category. 
-		This property holds the tool-related provenance information, the identification of a software tool that was used in translating the selected content.	
+		This property holds the tool-related provenance information, the identification of a software tool that was used in translating the resource.	
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
 		</rdfs:comment>
-		TODO: add range string?
+		TODO: why not range: string?
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
     </owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#toolRef">
 		<rdfs:comment xml:lang="en">
 		The toolRef property is based on the ITS "Provenance" data category. 
-		This property holds the tool-related provenance information, the identification of a software tool that was used in translating the selected content.	
+		This property holds the tool-related provenance information, the identification of a software tool that was used in translating the resource.	
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
 		</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
@@ -329,7 +321,7 @@
 		This property holds the human revision provenance information, the identification of a human translation revision agent.	
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
 		</rdfs:comment>
-		TODO: add range string?
+		TODO: why not range: string?
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
     </owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#revPersonRef">
@@ -346,7 +338,7 @@
 		This property holds the organizational revision provenance information, the identification of an organization acting as a translation revision agent.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
 		</rdfs:comment>
-		TODO: add range string?
+		TODO: why not range: string?
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
     </owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#revOrgRef">
@@ -360,16 +352,16 @@
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#revTool">
 		<rdfs:comment xml:lang="en">
 		The revTool property is based on the ITS "Provenance" data category. 
-		This property holds the tool-related revision provenance information, the identification of a software tool that was used in revising the translation of the selected content.
+		This property holds the tool-related revision provenance information, the identification of a software tool that was used in revising the translation of the resource.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
 		</rdfs:comment>
-		TODO: add range string?
+		TODO: why not range: string?
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
     </owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#revToolRef">
 		<rdfs:comment xml:lang="en">
 		The revToolRef property is based on the ITS "Provenance" data category. 
-		This property holds the tool-related revision provenance information, the identification of a software tool that was used in revising the translation of the selected content.
+		This property holds the tool-related revision provenance information, the identification of a software tool that was used in revising the translation of the resource.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
 		</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
@@ -385,21 +377,21 @@
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#externalResourceRef">
 		<rdfs:comment xml:lang="en">
 		The externalResourceRef property is based on the ITS "External Resource" data category. 
-		This property indicates that a node represents or references potentially translatable data in a resource outside (TODO: replace the following) the document. Examples of such resources are external images and audio or video files.
+		This property indicates that a resource represents or references potentially translatable data in a resource outside (TODO: replace the following) the document. Examples of such resources are external images and audio or video files.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#externalresource
 		</rdfs:comment>
 	</owl:ObjectProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#target" >
 		<rdfs:comment xml:lang="en">
 		The target property is based on the ITS "Target Pointer" data category. 
-		Some formats, such as those designed for localization or for multilingual resources, hold the same content in different languages inside a single document. This property is used to associate the node of a given source content (i.e., the content to be translated) and the node of its corresponding target content (i.e., the source content translated into a given target language).
+		Some formats, such as those designed for localization or for multilingual resources, hold the same content in different languages inside a single (TODO: replace the following) document. This property is used to associate the resource of a given source content (i.e., the content to be translated) and the resource of its corresponding target content (i.e., the source content translated into a given target language).
 
-		This specification makes no provision regarding the presence of the target nodes or their content: A target node may or may not exist and it may or may not have content.
+		This specification makes no provision regarding the presence of the target resources or their content: A target resource may or may not exist and it may or may not have content.
 
-		This data category can be used for several purposes, including but not limited to:
-			 • Extract the source content to translate and put back the translation at its proper location.
-			Compare source and target content for quality verification.
-			 • Reuse existing translations when localizing the new version of an existing document.
+		This property can be used for several purposes, including but not limited to:
+			 • Extract the source resource to translate and put back the translation at its proper location.
+			Compare source and target resource for quality verification.
+			 • Reuse existing translations when localizing the new version of an existing (TODO: replace the following) document.
 			 • Access aligned bi-lingual content to build memories, or to train machine translation engines.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#target-pointer
 		</rdfs:comment>
@@ -409,7 +401,7 @@
 		The id property is based on the ITS "ID Value" data category. 
 		This property indicates a value that can be used as unique identifier for a given part of the content.
 		Providing a unique identifier that is maintained in the original document can be useful for several purposes, for example:
-			 • Allow automated alignment between different versions of the source document, or between source and translated documents.
+			 • Allow automated alignment between different versions of the source resource, or between source and translated resources.
 			 • Improve the confidence in leveraged translation for exact matches.
 			 • Provide backtracking information between displayed text and source material when testing or debugging.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#idvalue
@@ -419,7 +411,7 @@
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#space">
 		<rdfs:comment xml:lang="en">
 		The space property is based on the ITS "Preserve Space" data category. 
-		The value of this property indicates how whitespace is to be handled in content. The possible values for this data category are "default" and "preserve" and carry the same meaning as the corresponding values of the xml:space attribute. The default value is "default". The Preserve Space data category does not apply to HTML documents in HTML syntax.
+		The value of this property indicates how whitespace is to be handled in content. The possible values for this property are "default" and "preserve" and carry the same meaning as the corresponding values of the xml:space attribute. The default value is "default". The Preserve Space data category does not apply to HTML documents in HTML syntax.
 		The xml:space attribute, as defined in section 2.10 of [XML 1.0], maps exactly to the Preserve Space data category.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#preservespace
 		</rdfs:comment>
@@ -428,7 +420,7 @@
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#hasLocQualityIssue">
 		<rdfs:comment xml:lang="en">
 		The hasLocQualityIssue property is based on the ITS "Localization Quality Issue" data category. 
-		This property  is used to express information related to localization quality assessment tasks. Such tasks can be conducted on the translation of some source content (such as a text or an image) into a target language or on the source content itself where its quality may impact on the localization process.
+		This property is used to express information related to localization quality assessment tasks.  Such tasks can be conducted on the translation of some source content (such as a text or an image) into a target language or on the source content itself where its quality may impact on the localization process.
 
 			Note:
 			Automated or manual quality assessment is one area of quality management for translation and localization. An example of existing quality assessment is in-country review (e.g., as part of a language acceptance test for software). An important part of quality assessment is the list of issue types that are being used. Very often, simple issue categories like "correct/incorrect" or "like/dislike" are inadequate; instead, more specific ones such as "terminology" or "grammar" are more helpful in identifying concrete reasons for quality problems and for obtaining a more objective picture of quality levels.
@@ -462,7 +454,7 @@
 		Comments can be used to explain an issue or provide guidance in addressing an issue. For example, a note about a Terminology issue might specify what term should be used.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#lqissue
 		</rdfs:comment>
-		TODO: add range string?
+		TODO: add range: string?
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#LocQualityIssue" />
     </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#locQualityIssueSeverity">
@@ -470,7 +462,7 @@
 		The locQualityIssueSeverity property is based on the ITS "Localization Quality Issue" data category. 
 		The value of this property holds the severity information, a classifier for the seriousness of an issue. The seriousness depends on the Quality Model that is being applied. The Quality Model should be made explicit via the Profile Reference.
 		The value has to be a rational number in the interval 0 to 100 (inclusive). The higher values represent greater severity.
-		It is up to tools to map the values allowed by ITS 2.0 to their own system’s scale. (TODO: If needed, the original value can be passed along using a custom namespace for XML, or a data- attribute for HTML.)
+		It is up to tools to map the values allowed by ITS 2.0 to their own system’s scale. (TODO: add the following?: If needed, the original value can be passed along using a custom namespace for XML, or a data- attribute for HTML.)
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#lqissue
 		</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#LocQualityIssue" />
@@ -488,7 +480,7 @@
 		<rdfs:comment xml:lang="en">
 		The locQualityIssueEnabled property is based on the ITS "Localization Quality Issue" data category. 
 		The value of this property holds the enabled information, a flag indicating whether the issue is enabled or not.
-		Possible values are "yes" or "no" (TODO: with the default value being "yes").
+		Possible values are "yes" or "no", with the default value being "yes".
 		This flag is used to activate or deactivate issues. There is no prescribed behavior associated with activated or deactivated issues. One example of usage is a tool that allows the user to deactivate false positives so they are not displayed again each time the document is re-checked.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#lqissue
 		</rdfs:comment>
@@ -497,7 +489,7 @@
     </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#locQualityRatingScore">
 		<rdfs:comment xml:lang="en">
-		The locQualityRatingScore property is based on the ITS "Localization Quality Rating" data category. It is used to express an overall measurement of the localization quality of a document or an item in a document.
+		The locQualityRatingScore property is based on the ITS "Localization Quality Rating" data category. It is used to express an overall measurement of the localization quality of a resource.
 		This property allows to specify a quality score for a given item or document.
 		Its value is a rational number in the interval 0 to 100 (inclusive). The higher values represent better quality.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#lqrating
@@ -514,7 +506,7 @@
     </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#locQualityRatingVote">
 		<rdfs:comment xml:lang="en">
-		The locQualityRatingVote property is based on the ITS "Localization Quality Rating" data category. It is used to express an overall measurement of the localization quality of a document or an item in a document. 
+		The locQualityRatingVote property is based on the ITS "Localization Quality Rating" data category. It is used to express an overall measurement of the localization quality of a resource. 
 		This property allows to specify a voting result for a given item or document.
 		Its value is a signed integer with higher values indicating a better vote.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#lqrating
@@ -532,7 +524,7 @@
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#locQualityRatingProfileRef">
 		<rdfs:comment xml:lang="en">
 		The locQualityRatingProfileRef property is based on the ITS "Localization Quality Rating" data category.
-		The value of this property points to (TODO: replace following) the reference document describing the quality assessment model used for the scoring.
+		It points to the reference resource describing the quality assessment model used for the scoring.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#lqrating
 		</rdfs:comment>
 	</owl:ObjectProperty>
@@ -565,7 +557,7 @@
 		<rdfs:comment xml:lang="en">
 		The mtConfidenceAnnotatorsRef property is based on the ITS "MT Confidence" data category.
 		This property has to be set, if the mtConfidence property is used, see http://www.w3.org/TR/its20/#its-tool-annotation for further information.
-		This property indicates information about the processor used to generate the mt annotation.		
+		This property refers to the processor used to generate the mt annotation.		
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#mtconfidence
 		</rdfs:comment>
 	</owl:ObjectProperty>
@@ -580,7 +572,7 @@
 			 • Controlling what characters can be used when translating examples of a login name in content.
 
 			Note:
-			The Allowed Characters data category is not intended to disallow HTML markup. The purpose is to restrict the content to various characters only, e.g., when the content is to be used for URL or filename generation. In most Content Management Systems, content is divided into several fields, some of which may be restricted to plain text, while in other fields HTML fragments may be allowed. Enforcing such restrictions is outside the scope of this data category.
+			The Allowed Characters data category is not intended to disallow HTML markup. The purpose is to restrict the content to various characters only, e.g., when the content is to be used for URL or filename generation. In most Content Management Systems, content is divided into several fields, some of which may be restricted to plain text, while in other fields HTML fragments may be allowed. Enforcing such restrictions is outside the scope of this property.
 
 		The set of characters that are allowed is specified using a regular expression. That is, each character in the selected content MUST be included in the set specified by the regular expression.
 
