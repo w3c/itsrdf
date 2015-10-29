@@ -52,47 +52,48 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#locNoteType">
-        <rdfs:comment xml:lang="en">The locNoteType property is based on the ITS "Localization Note" data category. The property expresses the type of a localization note. Possible values are "description" or "alert". Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#locNote-datacat</rdfs:comment>
+        <rdfs:comment xml:lang="en">The locNoteType property is based on the ITS "Localization Note" data category. The property expresses the type of a localization note. 
+		Possible values are "description" or "alert":
+		 • An alert contains information that the translator has to read before translating a piece of text. Example: an instruction to the translator to leave parts of the text in the source language.
+		 • A description provides useful background information that the translator will refer to only if they wish. Example: a clarification of ambiguity in the source text.
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#locNote-datacat</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#locNote">
 		<rdfs:comment xml:lang="en">The locNote property is based on the ITS "Localization Note" data category. The property is used to communicate notes to localizers about a particular item of content.
-		This data category can be used for several purposes, including, but not limited to:
-
-		Tell the translator how to translate parts of the content
-		 • Expand on the meaning or contextual usage of a specific element, such as what a variable refers to or how a string will be used in the user interface
-		 • Clarify ambiguity and show relationships between items sufficiently to allow correct translation (e.g., in many languages it is impossible to translate the word"enabled" in isolation without knowing the gender, number, and case of the thing it refers to.)
+		This property can be used for several purposes, including, but not limited to:
+		 • Tell the translator how to translate parts of the content
+		 • Expand on the meaning or contextual usage of a specific resource, such as what a variable refers to or how a string will be used in the user interface
+		 • Clarify ambiguity and show relationships between resources sufficiently to allow correct translation (e.g., in many languages it is impossible to translate the word"enabled" in isolation without knowing the gender, number, and case of the thing it refers to.)
 		 • Indicate why a piece of text is emphasized (important, sarcastic, etc.)
 			
-		Two types of informative notes are needed:
-		 • An alert contains information that the translator has to read before translating a piece of text. Example: an instruction to the translator to leave parts of the text in the source language.
-		 • A description provides useful background information that the translator will refer to only if they wish. Example: a clarification of ambiguity in the source text.
 		Editing tools may offer an easy way to create this type of information. Translation tools can be made to recognize the difference between these two types of localization notes, and present the information to translators in different ways.
 
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#locNote-datacat</rdfs:comment>
 	</owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#locNoteRef">
 		<rdfs:comment xml:lang="en">
-		The locNoteRef property is based on the ITS "Localization Note" data category. This property refers to the location of the localization note.
+		The locNoteRef property is based on the ITS "Localization Note" data category. This property refers to a resource holding the localization note, see DatatypeProperty locNote for further information.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#locNote-datacat
 		</rdfs:comment>
 	</owl:ObjectProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#term">
 		<rdfs:comment xml:lang="en">
-		The term property is based on the ITS "Terminology" data category. Possible values are "yes" or "no".
+		The term property is based on the ITS "Terminology" data category. This property is used to mark terms and optionally associate them with information, such as definitions. This helps to increase consistency across different parts of the documentation. It is also helpful for translation. Possible values are "yes" or "no".
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#terminology
 		</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     </owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#termInfoRef">
 		<rdfs:comment xml:lang="en">
-		The optional termInfoRef property is based on the ITS "Terminology" data category. This property refers to the resource providing information about the term.
+		The termInfoRef property is based on the ITS "Terminology" data category. This property refers to the resource providing information about the term. 
+		It is used to associate terms with information, such as definitions. This helps to increase consistency across different parts of the documentation. It is also helpful for translation. 
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#terminology
 		</rdfs:comment>
 	</owl:ObjectProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#termConfidence">
 		<rdfs:comment xml:lang="en">
-		The optional termConfidence property is based on the ITS "Terminology" data category. The value of this property is a rational number in the interval 0 to 1 (inclusive). termConfidence represents the confidence of the agents producing the annotation that the annotated unit is a term or not. 1 represents the highest level of confidence. termConfidence does not provide confidence information related to termInfoRef.
+		The termConfidence property is based on the ITS "Terminology" data category. The value of this property is a rational number in the interval 0 to 1 (inclusive). termConfidence represents the confidence of the agents producing the annotation that the annotated unit is a term or not. 1 represents the highest level of confidence. termConfidence does not provide confidence information related to termInfoRef.
 		If this property is set, the termAnnotatorsRef has to be set also. See http://www.w3.org/TR/its20/#its-tool-annotation for further information.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#terminology
 		</rdfs:comment>
@@ -107,6 +108,27 @@
 		</rdfs:comment>
 	</owl:ObjectProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#dir">
+		<rdfs:comment xml:lang="en">
+		The dir property is based on the ITS "Directionality" data category. 
+		This property allows the user to specify the base writing direction of blocks, embeddings, and overrides for the Unicode bidirectional algorithm. It has four possible values: "ltr", "rtl", "lro" and "rlo".
+
+			Note:
+			ITS defines only the values of the Directionality data category and their inheritance. The behavior of text labeled in this way may vary, according to the implementation. Implementers are encouraged, however, to model the behavior on that described in the CSS 2.1 specification or its successor. In such a case, the effect of the data category's values would correspond to the following CSS rules:
+				• Data category value: "ltr" (left-to-right text)
+				• CSS rule: *[dir="ltr"] { unicode-bidi: embed; direction: ltr}
+				• Data category value: "rtl" (right-to-left text)
+				• CSS rule: *[dir="rtl"] { unicode-bidi: embed; direction: rtl}
+				• Data category value: "lro" (left-to-right override)
+				• CSS rule: *[dir="lro"] { unicode-bidi: bidi-override; direction: ltr}
+				• Data category value: "rlo" (right-to-left override)
+				• CSS rule: *[dir="rlo"] { unicode-bidi: bidi-override; direction: rtl} 
+
+			Note:
+			At the time of writing, enhancements are being discussed in the context of HTML5 that are expected to change the approach to marking up Directionality, in particular to support content where directionality needs to be isolated from that of surrounding content. However, these enhancements are not finalized yet. This section therefore reflects directionality markup in [HTML 4.01]; enhancements in HTML5 will be reflected in a future revision.	
+				
+			More information about how to use this data category is provided by [Bidi Article](http://www.w3.org/TR/its20/#bidiarticle).
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#directionality
+		</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#withinText">
