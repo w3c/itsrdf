@@ -202,9 +202,45 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#localeFilterList">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+		<rdfs:comment xml:lang="en">
+		The localeFilterList property is based on the ITS "Local Filter" data category.
+		It specifies that a node is only applicable to certain locales and interacts with the localeFilterType property.
+
+		This property can be used for several purposes, including, but not limited to:
+
+			Including a legal notice only in locales for certain regions.
+
+			Dropping editorial notes from all localized output.
+
+		The Locale Filter data category associates with each selected node a filter type and a list of extended language ranges conforming to [BCP47].
+
+		The list is comma-separated and can include the wildcard extended language range "*". The list can also be empty. Whitespace surrounding language ranges is ignored.
+		
+		The value of this property is a comma-separated list of extended language ranges, or an empty string value.
+		
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#LocaleFilter
+		</rdfs:comment>
+		TODO: why not a list?
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" /> 
     </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#localeFilterType">
+		<rdfs:comment xml:lang="en">
+		The optional localeFilterType property is based on the ITS "Local Filter" data category. Possible values are "include" or "exclude". This property interacts with the localeFilterList property in the following way: 
+
+			A single wildcard "*" with a localeFilterType "include" indicates that the selected content applies to all locales.
+
+			A single wildcard "*" with a localeFilterType "exclude" indicates that the selected content applies to no locale.
+
+			An empty string with a localeFilterType "include" indicates that the selected content applies to no locale.
+
+			An empty string with a localeFilterType "exclude" indicates that the selected content applies to all locales.
+
+			Otherwise, with a localeFilterType "include", the selected content applies to the locales for which the language tag has a match in the list when using the Extended Filtering algorithm defined in [BCP47].
+
+			If, instead, the localeFilterType is "exclude", the selected content applies to the locales for which the language tag does not have a match in the list when using the Extended Filtering algorithm defined in [BCP47].
+		
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#LocaleFilter
+		</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     </owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#hasProvRecord">
