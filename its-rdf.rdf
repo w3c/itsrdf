@@ -73,7 +73,7 @@
 	</owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#locNoteRef">
 		<rdfs:comment xml:lang="en">
-		The locNoteRef property is based on the ITS "Localization Note" data category. The property contains an IRI referring to the location of the localization note.
+		The locNoteRef property is based on the ITS "Localization Note" data category. This property refers to the location of the localization note.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#locNote-datacat
 		</rdfs:comment>
 	</owl:ObjectProperty>
@@ -86,14 +86,14 @@
     </owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#termInfoRef">
 		<rdfs:comment xml:lang="en">
-		The optional termInfoRef property is based on the ITS "Terminology" data category. The value of this property contains an IRI referring to the resource providing information about the term.
+		The optional termInfoRef property is based on the ITS "Terminology" data category. This property refers to the resource providing information about the term.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#terminology
 		</rdfs:comment>
 	</owl:ObjectProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#termConfidence">
 		<rdfs:comment xml:lang="en">
-		The optional termInfoRef property is based on the ITS "Terminology" data category. The value of this property is a rational number in the interval 0 to 1 (inclusive). The value follows the XML Schema double data type with the constraining facets minInclusive set to 0 and maxInclusive set to 1. termConfidence represents the confidence of the agents producing the annotation that the annotated unit is a term or not. 1 represents the highest level of confidence. termConfidence does not provide confidence information related to termInfoRef.
-		If this property is set, the termAnnotatorsRef has to be set (TODO: for any parent element?), too. See http://www.w3.org/TR/its20/#its-tool-annotation for further information..
+		The optional termConfidence property is based on the ITS "Terminology" data category. The value of this property is a rational number in the interval 0 to 1 (inclusive). termConfidence represents the confidence of the agents producing the annotation that the annotated unit is a term or not. 1 represents the highest level of confidence. termConfidence does not provide confidence information related to termInfoRef.
+		If this property is set, the termAnnotatorsRef has to be set also. See http://www.w3.org/TR/its20/#its-tool-annotation for further information.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#terminology
 		</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
@@ -102,11 +102,7 @@
 		<rdfs:comment xml:lang="en">
 		The termAnnotatorsRef property is based on the ITS "Terminology" data category. 
 		It has to be set, if the termConfidence property is used, see http://www.w3.org/TR/its20/#its-tool-annotation for further information.
-		The value of termAnnotatorsRef is a space-separated list(TODO: or real list?) of references where each reference is composed of two parts: a data category identifier and an IRI. These two parts are separated by a | VERTICAL LINE (U+007C) character:
-		 * The data category identifier MUST be one of the identifiers specified in the data category overview table.
-		 * Within one termAnnotatorsRef value, a data category identifier MUST NOT appear more than one time.
-		 * The IRI indicates information about the processor used to generate the data category annotation. No single means is specified for how this IRI has to be used to indicate processor information. Possible mechanisms are: to encode information directly in the IRI, e.g., as parameters; to reference an external resource that provides such information, e.g. an XML file or an RDF declaration; or to reference another part of the document that provides such information.
-		
+		This property indicates information about the processor used to generate the terminology annotation.		
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#terminology
 		</rdfs:comment>
 	</owl:ObjectProperty>
@@ -116,7 +112,7 @@
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#withinText">
 		<rdfs:comment xml:lang="en">
 		The withinText property is based on the ITS "Elements Within Text" data category. 
-		This properts reveals if and how an element affects the way text content behaves from a linguistic viewpoint. This information is for example relevant to provide basic text segmentation hints for tools such as translation memory systems. The values associated with this data category are:
+		This property reveals if and how an element affects the way text content behaves from a linguistic viewpoint. This information is for example relevant to provide basic text segmentation hints for tools such as translation memory systems. The values associated with this property are:
 		 * &quot;yes&quot;: The element and its content are part of the flow of its parent element. For example the element strong in [XHTML 1.0]:
 		   &lt;strong&gt;Appaloosa horses&lt;/strong&gt; have spotted coats.
 		 * &quot;nested&quot;: The element is part of the flow of its parent element, its content is an independent flow. For example the element fn in [DITA 1.0]:
@@ -158,11 +154,7 @@
 		<rdfs:comment xml:lang="en">
 		The taAnnotatorsRef property is based on the ITS "Text Analysis" data category. 
 		It has to be set, if the taConfidence property is used, see http://www.w3.org/TR/its20/#its-tool-annotation.
-		The value of taAnnotatorsRef is a space-separated list (TODO: or real list?) of references where each reference is composed of two parts: a data category identifier and an IRI. These two parts are separated by a | VERTICAL LINE (U+007C) character:
-		 * The data category identifier MUST be one of the identifiers specified in the data category overview table.
-		 * Within one taAnnotatorsRef value, a data category identifier MUST NOT appear more than one time.
-		 * The IRI indicates information about the processor used to generate the data category annotation. No single means is specified for how this IRI has to be used to indicate processor information. Possible mechanisms are: to encode information directly in the IRI, e.g., as parameters; to reference an external resource that provides such information, e.g. an XML file or an RDF declaration; or to reference another part of the document that provides such information.
-		 
+		This property indicates information about the processor used to generate the text analysis annotation.		  
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#textanalysis
 		</rdfs:comment>
 	</owl:ObjectProperty>
@@ -170,7 +162,7 @@
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2005/11/its/rdf#taClassRef">
 		<rdfs:comment xml:lang="en">
 		The taClassRef property is based on the ITS "Text Analysis" data category. 
-		This property specifies an IRI, which implements the Entity type / concept class information, i.e. the type of entity, or concept class of the text analysis target, see http://www.w3.org/TR/its20/#textAnalysis-info-pieces for further information. 
+		The value of this property holds the Entity type / concept class information, i.e. the type of entity, or concept class of the text analysis target, see http://www.w3.org/TR/its20/#textAnalysis-info-pieces for further information. 
 		
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#textanalysis
 		</rdfs:comment>
@@ -456,7 +448,7 @@
 		<rdfs:comment xml:lang="en">
 		The locQualityIssueSeverity property is based on the ITS "Localization Quality Issue" data category. 
 		The value of this property holds the severity information, a classifier for the seriousness of an issue. The seriousness depends on the Quality Model that is being applied. The Quality Model should be made explicit via the Profile Reference.
-		The value has to be a rational number in the interval 0 to 100 (inclusive). It follows the XML Schema double data type with the constraining facets minInclusive set to 0 and maxInclusive set to 100. The higher values represent greater severity.
+		The value has to be a rational number in the interval 0 to 100 (inclusive). The higher values represent greater severity.
 		It is up to tools to map the values allowed by ITS 2.0 to their own system’s scale. (TODO: If needed, the original value can be passed along using a custom namespace for XML, or a data- attribute for HTML.)
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#lqissue
 		</rdfs:comment>
@@ -486,7 +478,7 @@
 		<rdfs:comment xml:lang="en">
 		The locQualityRatingScore property is based on the ITS "Localization Quality Rating" data category. It is used to express an overall measurement of the localization quality of a document or an item in a document.
 		This property allows to specify a quality score for a given item or document.
-		Its value is a rational number in the interval 0 to 100 (inclusive). The value follows the XML Schema double data type with the constraining facets minInclusive set to 0 and maxInclusive set to 100. The higher values represent better quality.
+		Its value is a rational number in the interval 0 to 100 (inclusive). The higher values represent better quality.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#lqrating
 		</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
@@ -494,7 +486,7 @@
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#locQualityRatingScoreThreshold">
 		<rdfs:comment xml:lang="en">
 		The locQualityRatingScoreThreshold property is based on the ITS "Localization Quality Rating" data category. It interacts with the locQualityRatingScore property.
-		The value of this property indicates the lowest score that constitutes a passing score in the profile used. Its value is a rational number in the interval 0 to 100 (inclusive). The value follows the XML Schema double data type with the constraining facets minInclusive set to 0 and maxInclusive set to 100.
+		The value of this property indicates the lowest score that constitutes a passing score in the profile used. Its value is a rational number in the interval 0 to 100 (inclusive). 
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#lqrating
 		</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
@@ -524,10 +516,86 @@
 		</rdfs:comment>
 	</owl:ObjectProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#mtConfidence">
+		<rdfs:comment xml:lang="en">
+		The mtConfidence property is based on the ITS "MT Confidence" data category.
+		This property is used to communicate the confidence score from a machine translation engine for the accuracy of a translation it has provided. It is not intended to provide a score that is comparable between machine translation engines and platforms. This data category does NOT aim to establish any sort of correlation between the confidence score and either human evaluation of MT usefulness, or post-editing cognitive effort. For harmonization’s sake, MT Confidence is provided as a rational number in the interval 0 to 1 (inclusive).
+
+			Note:
+			Implementers are expected to interpret the floating-point number and present it to human and other consumers in a convenient form, such as percentage (0-100%) with up to 2 decimal digits, font or background color coding, etc.
+
+			Note:
+			The value provided by the MT Confidence data category can be 1) the quality score of the translation as produced by an MT engine, or 2) a quality estimation score that uses both MT-system-internal features and additional external features. For this reason it is important that MT Confidence provides additional information about the MT engine (via the annotatorsRef property). Otherwise the score on its own is hard to interpret and to reuse. In the case of 2), MT Confidence potentially conveys information about any additional tools that were used in deriving the score.
+			
+		This property can be used for several purposes, including, but not limited to:
+			* Automated prioritising of raw machine translated text for further processing based on empirically set thresholds.
+			* Providing readers, translators, post-editors, reviewers, and proof-readers of machine translated text with self-reported relative accuracy prediction.
+
+		MT confidence scores can be displayed e.g., on websites machine translated on the fly, by simple web-based translation editors or by Computer Aided Translation (CAT) tools.
+		
+		The value of this property represents the translation confidence score as a rational number in the interval 0 to 1 (inclusive). 
+		
+		If this property is set, the mtConfidenceAnnotatorsRef has to be set also. See http://www.w3.org/TR/its20/#its-tool-annotation for further information.
+		
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#mtconfidence
+		</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
     </owl:DatatypeProperty>
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#mtConfidenceAnnotatorsRef"/>
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#mtConfidenceAnnotatorsRef">
+		<rdfs:comment xml:lang="en">
+		The mtConfidenceAnnotatorsRef property is based on the ITS "MT Confidence" data category.
+		This property has to be set, if the mtConfidence property is used, see http://www.w3.org/TR/its20/#its-tool-annotation for further information.
+		This property indicates information about the processor used to generate the mt annotation.		
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#mtconfidence
+		</rdfs:comment>
+	</owl:ObjectProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#allowedCharacters">
+		<rdfs:comment xml:lang="en">
+		The allowedCharacters property is based on the ITS "Allowed Characters" data category.
+		This property is used to specify the characters that are permitted in a given piece of content.
+
+		It can be used for various purposes, including the following examples:
+			* Limiting the characters that may be used in the UI of a game due to font restrictions.
+			* Preventing illegal characters from being entered as text content that represents file or directory names.
+			* Controlling what characters can be used when translating examples of a login name in content.
+
+			Note:
+			The Allowed Characters data category is not intended to disallow HTML markup. The purpose is to restrict the content to various characters only, e.g., when the content is to be used for URL or filename generation. In most Content Management Systems, content is divided into several fields, some of which may be restricted to plain text, while in other fields HTML fragments may be allowed. Enforcing such restrictions is outside the scope of this data category.
+
+		The set of characters that are allowed is specified using a regular expression. That is, each character in the selected content MUST be included in the set specified by the regular expression.
+
+		The regular expression is the character class construct charClass defined as follows:
+			[1] charClass ::= singleCharEsc | charClassExpr | wildcardEsc
+			[2] singleCharEsc ::= '\' [nrt\|.?*+(){}#x2D#x5B#x5D#x5E]
+			[3] charClassExpr ::= '[' charGroup ']'
+			[4] charGroup ::= posCharGroup | negCharGroup
+			[5] posCharGroup ::= ( charRange | singleCharEsc )+
+			[6] charRange ::= seRange | xmlCharIncDash
+			[7] seRange ::= charOrEsc '-' charOrEsc
+			[8] charOrEsc ::= xmlChar | singleCharEsc
+			[9] xmlChar ::= [^\#x2D#x5B#x5D]
+			[10] xmlCharIncDash ::= [^\#x5B#x5D]
+			[11] negCharGroup ::= '^' posCharGroup
+			[12] wildcardEsc ::= '.'
+
+		The . metacharacter also matches CARRIAGE RETURN (U+000D) and LINE FEED (U+000F). That is the dot-all option is set.
+
+		This construct is a sub-set of the Character Classes construct of XML Schema [XML Schema Part 2] and is compatible with most other regular expression engines.
+
+			Note:
+			Users may want to use a regular expression to make sure that they follow the definition given above. Sample regular expressions to verify the regular expression in allowed characters are provided: for XML and for Java.
+
+		Example of expressions (shown as XML source):
+			* &quot;[abc]&quot;: allows the characters 'a', 'b' and 'c'.
+			* &quot;[a-c]&quot;: allows the characters 'a', 'b' and 'c'.
+			* &quot;[a-zA-Z]&quot;: allows the characters from 'a' to 'z' and from 'A' to 'Z'.
+			* &quot;[^abc]&quot;: allows any characters except 'a', 'b', and 'c'.
+			* &quot;[^&amp;#x0061;-c]&quot;: allows any characters except 'a', 'b', and 'c'.
+			* &quot;[^&amp;lt;&gt;:&amp;quot;\\/|\?*]&quot;: allows only the characters valid for Windows file names.
+			* &quot;.&quot;: allows any character.
+			* &quot;&quot;: allows no character.
+		
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#allowedchars
+		</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#storageSize">
