@@ -372,53 +372,157 @@
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#externalResourceRef">
 		<rdfs:comment xml:lang="en">
 		The externalResourceRef property is based on the ITS "External Resource" data category. 
-		This property category indicates that a node represents or references potentially translatable data in a resource outside (TODO: replace the following) the document. Examples of such resources are external images and audio or video files.
+		This property indicates that a node represents or references potentially translatable data in a resource outside (TODO: replace the following) the document. Examples of such resources are external images and audio or video files.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#externalresource
 		</rdfs:comment>
 	</owl:ObjectProperty>
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#target" /> 
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#target" >
+		<rdfs:comment xml:lang="en">
+		The target property is based on the ITS "Target Pointer" data category. 
+		Some formats, such as those designed for localization or for multilingual resources, hold the same content in different languages inside a single document. This property is used to associate the node of a given source content (i.e., the content to be translated) and the node of its corresponding target content (i.e., the source content translated into a given target language).
+
+		This specification makes no provision regarding the presence of the target nodes or their content: A target node may or may not exist and it may or may not have content.
+
+		This data category can be used for several purposes, including but not limited to:
+			* Extract the source content to translate and put back the translation at its proper location.
+			Compare source and target content for quality verification.
+			* Reuse existing translations when localizing the new version of an existing document.
+			* Access aligned bi-lingual content to build memories, or to train machine translation engines.
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#target-pointer
+		</rdfs:comment>
+	</owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#id">
+		<rdfs:comment xml:lang="en">
+		The id property is based on the ITS "ID Value" data category. 
+		This property indicates a value that can be used as unique identifier for a given part of the content.
+		Providing a unique identifier that is maintained in the original document can be useful for several purposes, for example:
+			* Allow automated alignment between different versions of the source document, or between source and translated documents.
+			* Improve the confidence in leveraged translation for exact matches.
+			* Provide backtracking information between displayed text and source material when testing or debugging.
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#idvalue
+		</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#space">
+		<rdfs:comment xml:lang="en">
+		The space property is based on the ITS "Preserve Space" data category. 
+		The value of this property indicates how whitespace is to be handled in content. The possible values for this data category are "default" and "preserve" and carry the same meaning as the corresponding values of the xml:space attribute. The default value is "default". The Preserve Space data category does not apply to HTML documents in HTML syntax.
+		The xml:space attribute, as defined in section 2.10 of [XML 1.0], maps exactly to the Preserve Space data category.
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#preservespace
+		</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     </owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#hasLocQualityIssue">
+		<rdfs:comment xml:lang="en">
+		The hasLocQualityIssue property is based on the ITS "Localization Quality Issue" data category. 
+		This property  is used to express information related to localization quality assessment tasks. Such tasks can be conducted on the translation of some source content (such as a text or an image) into a target language or on the source content itself where its quality may impact on the localization process.
+
+			Note:
+			Automated or manual quality assessment is one area of quality management for translation and localization. An example of existing quality assessment is in-country review (e.g., as part of a language acceptance test for software). An important part of quality assessment is the list of issue types that are being used. Very often, simple issue categories like "correct/incorrect" or "like/dislike" are inadequate; instead, more specific ones such as "terminology" or "grammar" are more helpful in identifying concrete reasons for quality problems and for obtaining a more objective picture of quality levels.
+			Non-normative terminology related to localization quality as used in this section is provided in Appendix H: Localization Quality Guidance, see http://www.w3.org/TR/its20/#localization-quality-guidance.
+			
+		This property can be used in a number of ways, including the following example scenarios:
+			* A human reviewer working with a web-based tool adds quality markup manually in a text editor, including comments and suggestions, to localized content as part of the review process. A subsequent process examines this markup to ensure that changes were made.
+			* A fully automatic quality checking tool flags a number of potential quality issues in an XML or HTML file and marks them up using ITS 2.0 markup. A human reviewer then uses another tool to examine this markup and decide whether the file needs to receive more extensive review or be passed on for further processing without a further manual review stage.
+			* A quality assessment process identifies a number of issues and adds the ITS markup to a rendered HTML preview of an XML file along with CSS styling that highlights these issues. The resulting HTML file is then sent back to the translator to assist his or her revision efforts.
+		
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#lqissue
+		</rdfs:comment>
         <rdfs:range>
             <owl:Class rdf:about="http://www.w3.org/2005/11/its/rdf#LocQualityIssue" />
         </rdfs:range>
     </owl:ObjectProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#locQualityIssueType">
+		<rdfs:comment xml:lang="en">
+		The locQualityIssueType property is based on the ITS "Localization Quality Issue" data category. 
+		The value of this property holds the type information, a classifier that groups similar issues into categories (for example to differentiate spelling errors from grammar errors). See http://www.w3.org/TR/its20/#lqissue-typevalues for a list of allowed values.
+		ITS 2.0-compliant tools that use these types MUST map their internal values to these types. If the type of the issue is set to uncategorized, a comment MUST be specified as well.
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#lqissue
+		</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#LocQualityIssue" />
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#locQualityIssueComment">
+		<rdfs:comment xml:lang="en">
+		The locQualityIssueComment property is based on the ITS "Localization Quality Issue" data category. 
+		The value of this property holds the comment information, a human-readable description of a specific instance of a quality issue.
+		Comments can be used to explain an issue or provide guidance in addressing an issue. For example, a note about a Terminology issue might specify what term should be used.
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#lqissue
+		</rdfs:comment>
+		TODO: add range string?
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#LocQualityIssue" />
     </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#locQualityIssueSeverity">
+		<rdfs:comment xml:lang="en">
+		The locQualityIssueSeverity property is based on the ITS "Localization Quality Issue" data category. 
+		The value of this property holds the severity information, a classifier for the seriousness of an issue. The seriousness depends on the Quality Model that is being applied. The Quality Model should be made explicit via the Profile Reference.
+		The value has to be a rational number in the interval 0 to 100 (inclusive). It follows the XML Schema double data type with the constraining facets minInclusive set to 0 and maxInclusive set to 100. The higher values represent greater severity.
+		It is up to tools to map the values allowed by ITS 2.0 to their own system’s scale. (TODO: If needed, the original value can be passed along using a custom namespace for XML, or a data- attribute for HTML.)
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#lqissue
+		</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#LocQualityIssue" />
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
     </owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#locQualityIssueProfileRef">
+		<rdfs:comment xml:lang="en">
+		The locQualityIssueProfileRef property is based on the ITS "Localization Quality Issue" data category. 
+		The value of this property holds the profile reference information, a description of the quality assessment model (or a specific profile (customization/instantiation) of a model, where relevant) used for the issue.
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#lqissue
+		</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#LocQualityIssue" />
     </owl:ObjectProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#locQualityIssueEnabled">
+		<rdfs:comment xml:lang="en">
+		The locQualityIssueEnabled property is based on the ITS "Localization Quality Issue" data category. 
+		The value of this property holds the enabled information, a flag indicating whether the issue is enabled or not.
+		Possible values are "yes" or "no" (TODO: with the default value being "yes").
+		This flag is used to activate or deactivate issues. There is no prescribed behavior associated with activated or deactivated issues. One example of usage is a tool that allows the user to deactivate false positives so they are not displayed again each time the document is re-checked.
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#lqissue
+		</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#LocQualityIssue" />
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#locQualityRatingScore">
+		<rdfs:comment xml:lang="en">
+		The locQualityRatingScore property is based on the ITS "Localization Quality Rating" data category. It is used to express an overall measurement of the localization quality of a document or an item in a document.
+		This property allows to specify a quality score for a given item or document.
+		Its value is a rational number in the interval 0 to 100 (inclusive). The value follows the XML Schema double data type with the constraining facets minInclusive set to 0 and maxInclusive set to 100. The higher values represent better quality.
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#lqrating
+		</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
     </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#locQualityRatingScoreThreshold">
+		<rdfs:comment xml:lang="en">
+		The locQualityRatingScoreThreshold property is based on the ITS "Localization Quality Rating" data category. It interacts with the locQualityRatingScore property.
+		The value of this property indicates the lowest score that constitutes a passing score in the profile used. Its value is a rational number in the interval 0 to 100 (inclusive). The value follows the XML Schema double data type with the constraining facets minInclusive set to 0 and maxInclusive set to 100.
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#lqrating
+		</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
     </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#locQualityRatingVote">
+		<rdfs:comment xml:lang="en">
+		The locQualityRatingVote property is based on the ITS "Localization Quality Rating" data category. It is used to express an overall measurement of the localization quality of a document or an item in a document. 
+		This property allows to specify a voting result for a given item or document.
+		Its value is a signed integer with higher values indicating a better vote.
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#lqrating
+		</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
     </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#locQualityRatingVoteThreshold">
+		<rdfs:comment xml:lang="en">
+		The locQualityRatingVoteThreshold property is based on the ITS "Localization Quality Rating" data category. It interacts with the locQualityRatingVote property.
+		The value of this property indicates the lowest value that constitutes a passing vote in the profile used. Its value is a signed integer.
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#lqrating
+		</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
     </owl:DatatypeProperty>
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#locQualityRatingProfileRef"/>
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#locQualityRatingProfileRef">
+		<rdfs:comment xml:lang="en">
+		The locQualityRatingProfileRef property is based on the ITS "Localization Quality Rating" data category.
+		The value of this property points to (TODO: replace following) the reference document describing the quality assessment model used for the scoring.
+		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#lqrating
+		</rdfs:comment>
+	</owl:ObjectProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#mtConfidence">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
     </owl:DatatypeProperty>
