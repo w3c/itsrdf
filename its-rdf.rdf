@@ -181,7 +181,7 @@
 		</rdfs:comment>
 	</owl:ObjectProperty>
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2005/11/its/rdf#taPropRef">
-		TODO: documentation needed
+    	<rdfs:comment>TODO: documentation needed</rdfs:comment>
 	</owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2005/11/its/rdf#taClassRef">
 		<rdfs:comment xml:lang="en">
