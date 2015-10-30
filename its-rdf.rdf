@@ -181,7 +181,7 @@
 		</rdfs:comment>
 	</owl:ObjectProperty>
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2005/11/its/rdf#taPropRef">
-		TODO: What's this?
+		TODO: documentation needed
 	</owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2005/11/its/rdf#taClassRef">
 		<rdfs:comment xml:lang="en">
@@ -321,7 +321,7 @@
 		This property holds the human revision provenance information, the identification of a human translation revision agent.	
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
 		</rdfs:comment>
-		TODO: why not range: string?
+    	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
     </owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#revPersonRef">
@@ -338,7 +338,7 @@
 		This property holds the organizational revision provenance information, the identification of an organization acting as a translation revision agent.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
 		</rdfs:comment>
-		TODO: why not range: string?
+    	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
     </owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#revOrgRef">
@@ -355,7 +355,7 @@
 		This property holds the tool-related revision provenance information, the identification of a software tool that was used in revising the translation of the resource.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
 		</rdfs:comment>
-		TODO: why not range: string?
+    	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
     </owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#revToolRef">
