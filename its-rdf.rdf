@@ -45,6 +45,7 @@
         <rdfs:comment xml:lang="en">
             Changelog:
             * 0.1.1 update of abstract and editing of properties "translate" and "locNoteType"
+            * 0.1.2 further editing of ontology description by Arne Binder
         </rdfs:comment>​
     </owl:Ontology>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#translate"> 
@@ -158,8 +159,7 @@
 		This data category addresses various challenges:
 			 • Often domain-related information already exists in the document (e.g., keywords in the HTML meta element). The Domain data category provides a mechanism to point to this information.
 			 • There are many flat or structured lists of domain related values, keywords, key phrases, classification codes, ontologies, etc. The Domain data category does not propose its own given list. Instead it provides a mapping mechanism to associate the values in the document with the values used by the consumer tool.
-			
-		TODO: ADD ADITIONAL INFORMATION (from http://www.w3.org/TR/its20/#domain-implementation)?
+			 
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#domain
 		</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
@@ -270,7 +270,7 @@
 		This property holds the human provenance information, the identification of a human translation agent.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
 		</rdfs:comment>
-		TODO: why not range: string?
+    	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
     </owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#personRef">
@@ -287,7 +287,7 @@
 		This property holds the organizational provenance information, the identification of an organization acting as a translation agent.		
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
 		</rdfs:comment>
-		TODO: why not range: string?
+    	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
     </owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#orgRef">
@@ -304,7 +304,7 @@
 		This property holds the tool-related provenance information, the identification of a software tool that was used in translating the resource.	
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#provenance
 		</rdfs:comment>
-		TODO: why not range: string?
+    	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#ProvRecord" />
     </owl:DatatypeProperty>
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#toolRef">
@@ -377,21 +377,21 @@
     <owl:ObjectProperty rdf:about="http://www.w3.org/2005/11/its/rdf#externalResourceRef">
 		<rdfs:comment xml:lang="en">
 		The externalResourceRef property is based on the ITS "External Resource" data category. 
-		This property indicates that a resource represents or references potentially translatable data in a resource outside (TODO: replace the following) the document. Examples of such resources are external images and audio or video files.
+		This property indicates that a resource represents or references potentially translatable data in a resource outside the resource. Examples of such resources are external images and audio or video files.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#externalresource
 		</rdfs:comment>
 	</owl:ObjectProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#target" >
 		<rdfs:comment xml:lang="en">
 		The target property is based on the ITS "Target Pointer" data category. 
-		Some formats, such as those designed for localization or for multilingual resources, hold the same content in different languages inside a single (TODO: replace the following) document. This property is used to associate the resource of a given source content (i.e., the content to be translated) and the resource of its corresponding target content (i.e., the source content translated into a given target language).
+		Some formats, such as those designed for localization or for multilingual resources, hold the same content in different languages inside a single resource. This property is used to associate the resource of a given source content (i.e., the content to be translated) and the resource of its corresponding target content (i.e., the source content translated into a given target language).
 
 		This specification makes no provision regarding the presence of the target resources or their content: A target resource may or may not exist and it may or may not have content.
 
 		This property can be used for several purposes, including but not limited to:
 			 • Extract the source resource to translate and put back the translation at its proper location.
 			Compare source and target resource for quality verification.
-			 • Reuse existing translations when localizing the new version of an existing (TODO: replace the following) document.
+			 • Reuse existing translations when localizing the new version of an existing resource.
 			 • Access aligned bi-lingual content to build memories, or to train machine translation engines.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#target-pointer
 		</rdfs:comment>
@@ -454,7 +454,7 @@
 		Comments can be used to explain an issue or provide guidance in addressing an issue. For example, a note about a Terminology issue might specify what term should be used.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#lqissue
 		</rdfs:comment>
-		TODO: add range: string?
+    	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#LocQualityIssue" />
     </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2005/11/its/rdf#locQualityIssueSeverity">
@@ -462,7 +462,7 @@
 		The locQualityIssueSeverity property is based on the ITS "Localization Quality Issue" data category. 
 		The value of this property holds the severity information, a classifier for the seriousness of an issue. The seriousness depends on the Quality Model that is being applied. The Quality Model should be made explicit via the Profile Reference.
 		The value has to be a rational number in the interval 0 to 100 (inclusive). The higher values represent greater severity.
-		It is up to tools to map the values allowed by ITS 2.0 to their own system’s scale. (TODO: add the following?: If needed, the original value can be passed along using a custom namespace for XML, or a data- attribute for HTML.)
+		It is up to tools to map the values allowed by ITS 2.0 to their own system’s scale.
 		Definition in the ITS 2.0 specification: see http://www.w3.org/TR/its20/#lqissue
 		</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.w3.org/2005/11/its/rdf#LocQualityIssue" />
