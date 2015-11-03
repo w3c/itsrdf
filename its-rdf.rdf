@@ -9,6 +9,7 @@
     xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://www.w3.org/2005/11/its/rdf#">
         <dc:creator>Dave Lewis</dc:creator><dc:creator>Felix Sasaki</dc:creator><dc:creator>Sebastian Hellmann</dc:creator>
+    	<dc:contributor>Arne Binder</dc:contributor>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string" xml:lang="en"> This is the ITS 2.0 / RDF
             Ontology version 8 October 2015.
             
