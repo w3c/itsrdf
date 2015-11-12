@@ -1,0 +1,1471 @@
+{
+    "@context": [
+        "http://www.w3.org/ns/anno.jsonld",
+        {"itsrdf": "http://www.w3.org/2005/11/its/rdf#"}
+    ],
+    "Container": [
+        {
+            "@id": "http://example.com/myannotations/a1",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a2",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/topic[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a3",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/topic[1]/title[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "no",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a5",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/topic[1]/body[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "no",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a7",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/topic[1]/body[1]/dl[1]/dlentry[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "no",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a8",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/topic[1]/body[1]/dl[1]/dlentry[1]/dt[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "no",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a9",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/topic[1]/body[1]/dl[1]/dlentry[1]/dd[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "no",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a10",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/topic[1]/body[1]/dl[1]/dlentry[1]/dd[1]/term[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "no",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a11",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/topic[1]/body[1]/p[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a12",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/topic[1]/body[1]/ul[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "no",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a13",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/topic[1]/body[1]/ul[1]/li[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "no",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a14",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/topic[1]/body[1]/ul[1]/li[2]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "no",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a15",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/topic[1]/body[1]/ul[1]/li[3]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "no",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a16",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/topic[1]/body[1]/ul[1]/li[4]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "no",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a17",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/topic[1]/body[1]/p[2]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a18",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/topic[1]/body[1]/p[2]/ph[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "no",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:lang": "fr",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a21",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/text[1]/body[1]/par[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:lang": "en",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a22",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/text[1]/body[1]/par[1]/quote[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "rtl",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:lang": "ar",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a23",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/text[1]/body[1]/par[1]/quote[2]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:lang": "en",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a24",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/doc[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a28",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/doc[1]/body[1]/p[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:domainMapping": "automotive auto, medical medicine, 'criminal law' law, 'property law' law",
+                "itsrdf:domain": "automotive",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a31",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/text[2]/body[1]/par[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a32",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/text[2]/body[1]/par[1]/bold[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "yes",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a34",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/doc[2]/mediaobject[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a39",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/doc[2]/mediaobject[1]/textobject[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a40",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/doc[2]/mediaobject[1]/textobject[1]/para[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a42",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/doc[2]/mediaobject[1]/textobject[1]/warning[1]/para[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a44",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/doc[3]/msg[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a45",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/doc[3]/msg[1]/text[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included",
+                "itsrdf:idvalue": "settingsMissing_t"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a46",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/doc[3]/msg[1]/desc[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included",
+                "itsrdf:idvalue": "settingsMissing_d"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a47",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/doc[3]/msg[1]/desc[1]/em[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included",
+                "itsrdf:idvalue": "settingsMissing_d"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a48",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/doc[4]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a51",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/doc[4]/body[1]/p[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:lang": "ja",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a55",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/book[1]/info[1]/legalnotice[1]/para[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "en-CA, fr-CA"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a56",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/Res[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a58",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/Res[1]/body[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a59",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/Res[1]/body[1]/msg[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a60",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/Res[1]/body[1]/msg[1]/notes[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "no",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a61",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/Res[1]/body[1]/msg[1]/data[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:locNoteType": "description",
+                "itsrdf:locNote": "Indicates that the resource file {0} could not be loaded.",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a62",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/Res[1]/body[1]/msg[2]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a63",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/Res[1]/body[1]/msg[2]/notes[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "no",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a64",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/Res[1]/body[1]/msg[2]/data[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:locNoteType": "description",
+                "itsrdf:locNote": "A division by 0 was going to be computed.",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a65",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/file[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "no",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a66",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/file[1]/entry[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "no",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a67",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/file[1]/entry[1]/source[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included",
+                "itsrdf:targetPointer": "To be created (one)"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a68",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/file[1]/entry[1]/target[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "no",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a69",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/file[1]/entry[2]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "no",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a70",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/file[1]/entry[2]/source[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included",
+                "itsrdf:targetPointer": "To be created (two)"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a71",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/file[1]/entry[2]/target[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "no",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a73",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/text[3]/p[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a74",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/text[3]/p[1]/term[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "yes",
+                "itsrdf:termInfo": "the relationship, expressed through discourse structure, between the implied author or some other addresser, and the fiction.",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a75",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/text[3]/p[1]/gloss[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a78",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/textTa[1]/body[1]/p[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a79",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/textTa[1]/body[1]/p[1]/span[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included",
+                "itsrdf:taClassRef": "",
+                "itsrdf:taIdentRef": "",
+                "itsrdf:taConfidence": "0.7",
+                "itsrdf:annotatorsRef": "text-analysis|http://enrycher.ijs.si"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a80",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/textTa[1]/body[1]/p[1]/span[2]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included",
+                "itsrdf:taSource": "Wordnet3.0",
+                "itsrdf:taIdent": "301467919",
+                "itsrdf:taConfidence": "0.5",
+                "itsrdf:annotatorsRef": "text-analysis|http://enrycher.ijs.si"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a82",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/doc[5]/file[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a85",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/doc[5]/file[1]/unit[1]/segment[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a86",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/doc[5]/file[1]/unit[1]/segment[1]/source[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a87",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/doc[5]/file[1]/unit[1]/segment[1]/target[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a88",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/doc[5]/file[1]/unit[1]/segment[1]/target[1]/mrk[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included",
+                "itsrdf:hasLocQualityIssue": "'c'es' is unknown. Could be 'c'est' 75 yes"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a93",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/textMTConfidence[1]/body[1]/p[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a94",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/textMTConfidence[1]/body[1]/p[1]/span[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included",
+                "itsrdf:mtConfidence": "0.6982",
+                "itsrdf:annotatorsRef": "mt-confidence|file:///tools.xml#T1"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a95",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/textMTConfidence[1]/body[1]/p[1]/span[2]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included",
+                "itsrdf:mtConfidence": "0.7982",
+                "itsrdf:annotatorsRef": "mt-confidence|file:///tools.xml#T2"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a96",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/textMTConfidence[1]/body[1]/p[1]/span[3]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included",
+                "itsrdf:mtConfidence": "0.9982",
+                "itsrdf:annotatorsRef": "mt-confidence|file:///tools.xml#T3"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a97",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/textMTConfidence[1]/body[1]/p[1]/span[4]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included",
+                "itsrdf:mtConfidence": "0.6982",
+                "itsrdf:annotatorsRef": "mt-confidence|file:///tools.xml#T4"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a99",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/allowedCharactersMessages[1]/msg[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a100",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/allowedCharactersMessages[1]/msg[1]/panelmsg[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included",
+                "itsrdf:allowedCharacters": "[ -þ]"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a101",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/storageSizeMessages[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a102",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/storageSizeMessages[1]/var[1]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included",
+                "itsrdf:storageSize": "8",
+                "itsrdf:storageEncoding": "UTF-16",
+                "itsrdf:lineBreakType": "lf"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a103",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/storageSizeMessages[1]/var[2]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included",
+                "itsrdf:storageSize": "8",
+                "itsrdf:storageEncoding": "UTF-16",
+                "itsrdf:lineBreakType": "lf"
+            }
+        },
+        {
+            "@id": "http://example.com/myannotations/a104",
+            "@type": "Annotation",
+            "target": {
+                "source": "http://example.com/myfile.xml",
+                "selector": {
+                    "@type": "FragmentSelector",
+                    "conformsTo": "http://www.w3.org/TR/xpath/",
+                    "value": "/itsProcessingInput/storageSizeMessages[1]/var[3]"
+                }
+            },
+            "body": {
+                "itsrdf:translate": "yes",
+                "itsrdf:dir": "ltr",
+                "itsrdf:withinText": "no",
+                "itsrdf:term": "no",
+                "itsrdf:localeFilterList": "*",
+                "itsrdf:localeFilterType": "included",
+                "itsrdf:storageSize": "12",
+                "itsrdf:storageEncoding": "UTF-16",
+                "itsrdf:lineBreakType": "lf"
+            }
+        }
+    ]
+}
